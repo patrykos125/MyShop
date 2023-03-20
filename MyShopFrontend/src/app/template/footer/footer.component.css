@@ -1,8 +1,6 @@
 footer{
-  width: 100%;
-  height: 100px;
-  background-color: #e7c6b1;
-
-
-
+  width: auto;
+  text-align: center;
+  padding: 10px;
+  background-color: gray;
 }

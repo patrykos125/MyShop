@@ -4,15 +4,11 @@ nav{
   background-color: #e7c6b1;
   padding:200px 10px 100px 10px;
   display: flex;
-
   flex-direction: column;
   align-items: center;
   gap: 30px;
   justify-content: space-around;
   float: left;
-
-
-
 }
 nav>ul>li{
   background-color: #e7c6b1;
@@ -23,18 +19,13 @@ nav>ul>li{
   text-align: center;
   list-style: none;
   /*box-shadow: grey -3px 5px;*/
-
-
-
 }
 nav>ul>li:hover{
   position: relative;
   bottom: 5px;
   cursor: pointer;
-
 }
 nav>ul>li>a:link{
   text-decoration: none;
-
 }
 a{color: black}
