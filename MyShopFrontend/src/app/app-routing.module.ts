@@ -7,7 +7,10 @@ import {BasketComponent} from "./basket/basket.component";
 
 const routes:Routes=[
 
+
+  {path:'',component:HomePageComponent},
   {path:'basket',component:BasketComponent}
+
 ]
 @NgModule({
   declarations: [],

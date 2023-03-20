@@ -9,6 +9,7 @@ import { FooterComponent } from './template/footer/footer.component';
 import { BasketComponent } from './basket/basket.component';
 import { AppRoutingModule } from './app-routing.module';
 import {RouterLink, RouterOutlet} from "@angular/router";
+import { AppComponent } from './app.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {RouterLink, RouterOutlet} from "@angular/router";
     HeaderComponent,
     NavComponent,
     FooterComponent,
-    BasketComponent
+    BasketComponent,
+    AppComponent
 
   ],
   imports: [
@@ -28,6 +30,6 @@ import {RouterLink, RouterOutlet} from "@angular/router";
     RouterLink
   ],
   providers: [],
-  bootstrap: [HomePageComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
