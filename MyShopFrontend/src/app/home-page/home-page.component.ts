@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
+import {Basket} from "../classes/Basket";
 
 @Component({
   selector: 'app-home-page',
@@ -7,5 +8,5 @@ import {Router} from "@angular/router";
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent {
-
+  basket :Basket = new Basket();
 }

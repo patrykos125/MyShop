@@ -1,3 +1,13 @@
 <div class="container">
   <h1>To jest strona główna</h1>
+  <div id="basketItems">
+    <div class="item" *ngFor="let item of basket.getArray();let indexOfelement=index;">
+      <img [src]="item.imgURL"  alt="" class="photo">
+      <div class="tools">
+        <p>{{item.description}} </p>
+
+
+        <div class="sum"><h2>{{item.amount|number :'.2-2'}} zł</h2></div>
+      </div>
+    </div>
 </div>
