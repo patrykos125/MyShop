@@ -1,0 +1,62 @@
+header {
+  background-color: gray;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#section-logo{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.icon{
+  height: 30px;
+  width: 30px;
+  margin: auto 50px auto 0;
+}
+.icon:hover{
+  transform: scale(1.2);
+}
+.icon-logo{
+  height: 50px;
+  width: 50px;
+  margin: auto 10px auto 30px;
+}
+#logoShop{
+  color: black;
+  text-decoration: none;
+  font-size: xxx-large;
+
+}
+#logoShop:hover{
+  opacity: 70%;
+}
+
+/*header>a{*/
+/*  margin: auto 0 ;*/
+/*}*/
+/*#logoa{*/
+/*  margin:0 auto;*/
+/*  padding: 0;*/
+/*  height: 100px;*/
+/*  width: auto;*/
+
+/*}*/
+/*.logo{*/
+/*  height: 100px;*/
+/*}*/
+
+/*@media screen and (max-width:  700px){*/
+/*  .icon{*/
+/*    margin: 10px*/
+/*  }*/
+/*}*/
+
+
+

@@ -1,0 +1,65 @@
+
+<div class="container">
+		<div class="wrapper">
+			<div class="options">
+				<div class="supreme-option">Konto</div>
+				<ul>
+					<li (click)="toggleVisibility('showPersonal')">Dane</li>
+					<li (click)="toggleVisibility('showChangePassword')">Zmień hasło</li>
+					<li (click)="toggleVisibility('showChangeData')">Zmień dane</li>
+				</ul>
+				<div class="supreme-option">Zamówienia</div>
+				<ul>
+					<li (click)="toggleVisibility('showYourOrders')">Twoje zamówienia</li>
+					<li (click)="toggleVisibility('showOrderHistory')">Historia zamówień</li>
+					<li>Reklamacja</li>
+				</ul>
+				</div>
+			<div class="content">
+					
+							<h1>Dane</h1>
+			
+							<div class="profile-box">
+								<p>Imie: Imie</p>
+				<p>Nazwisko: Nazwisko</p>	
+				
+				<p>Miasto: Miasto</p>
+				<p>Ulica: Ulica</p>
+				<p>Numer mieszkania: Numer Mieszkania</p>
+				<p>Kod pocztowy: Kod pocztowy</p>
+				</div>
+				<h1>Dane kontaktowe</h1>
+				
+				<div class="profile-box">
+				<p>Email: Email</p>
+				<p>Telefon: Telefon</p>
+				</div>
+					
+					<div *ngIf="showChangePassword">
+						<h1>Zmiana hasła</h1>
+						<div class="line"></div>
+					
+					</div>
+					<div *ngIf="showChangeData">
+						<h1>Zmień dane</h1>
+						<div class="line"></div>
+					
+					</div>
+					<div *ngIf="showYourOrders">
+						<h1>Twoje zamówienia</h1>
+						<div class="line"></div>
+					
+					</div>
+										<div *ngIf="showOrderHistory">
+						<h1>Historia zamówień</h1>
+						<div class="line"></div>
+					
+					</div>
+										<div *ngIf="showWishList">
+						<h1>Obserwowane produkty</h1>
+						<div class="line"></div>
+					
+					</div>
+			</div>
+		</div>
+	</div>

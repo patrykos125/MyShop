@@ -1,0 +1,27 @@
+
+<div id="content">
+  <div id="basketItems">
+    <div class="item" *ngFor="let item of basket.getArray();let indexOfelement=index;">
+      <img [src]="item.imgURL"  alt="" class="photo">
+      <div class="tools">
+        <p>{{item.description}} </p>
+
+      <div class="amount">
+        <div class="minus" (click)="item.decreaseamount()" >-</div>
+        <div class="amountNumber">{{item.amount}}</div>
+        <div class="plus" (click)="item.increaseAmount()" >+</div>
+      </div>
+      <div class="sum"><h2>{{item.getSum() |number :'.2-2'}} zł</h2></div>
+      <img src="assets/img/icon/trash-can.png" (click)="basket.romeveItem(indexOfelement)" class="trash-icon" alt="">
+      </div>
+    </div>
+
+
+  </div>
+  <aside *ngIf="basket.getSum()!=0"> Wartość produktów <b>{{basket.getSum() |number :'.2-2'}} zł </b><br>
+          Dostawa od <b>{{deliveryCost}} zł</b><br>
+          Razem z dostawą <b>{{basket.getSum()+deliveryCost |number :'.2-2'}}zł</b><br>
+  </aside>
+
+</div>
+
