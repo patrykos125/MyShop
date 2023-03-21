@@ -1,75 +1,54 @@
-.container{
-  background: gray;
-  margin:10px;
-  padding: 20px;
+.container {
+  background: dimgray;
+  width: auto;
+  height: initial;
 }
-#content{
-  margin-top: 100px;
-  width: 100%;
-  padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
+h1{
+  padding: 5px;
+  margin-left: 10px;
+}
+#buttonAdd{
+  bottom: 0;
+  left:0;
+  position: absolute;
+  z-index: 99;
+  font-size: 15px;
+  border: none;
+  outline: none;
+  background-color: #555;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+#buttonAdd:hover {
+  background-color: #777;
 }
 #basketItems{
   display: flex;
+  justify-content: center;
+  align-content: center ;
   flex-wrap: wrap;
 }
 
 .item{
-  background-color: lightblue;
+  background-color: darkgray;
+  margin: 10px;
+  padding: 10px;
+  width: 300px;
   display: flex;
   gap: 10px;
-  flex-wrap: wrap;
-  padding: 5px;
-  margin: 10px;
 }
 .photo{
-  max-height: 200px;
-  width: auto;
+  max-height: 300px;
+  width: 200px;
 }
 .tools{
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-item p{
-
-}
-.amount{
-  display: flex;
-  font-size: 42px;
-}
-.minus{
-  font-weight: bold;
-  font-size: 42px;
-  margin-right: 15px;
-  border:1px  solid black;
-  width: 50px;
-  text-align: center;
-  cursor: pointer;
-
-}
-.plus{
-  font-weight: bold;
-  font-size: 42px;
-  margin-left: 15px;
-  border: 1px solid black;
-  width: 50px;
-  text-align: center;
-  cursor: pointer;
-
+  position: relative;
+  overflow: auto;
 }
 
-.trash-icon{
-  height: 50px;
-  width: 50px;
-  cursor: pointer;
-}
-
-aside{
-  background-color: seashell;
-  padding: 20px;
-  font-size: 24px;
-
-}
 

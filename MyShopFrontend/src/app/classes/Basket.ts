@@ -6,6 +6,8 @@ export  class Basket{
     new ItemInBasket("assets/img/product1.jpg","kurtka niebieska XL",139.99,2),
     new ItemInBasket("assets/img/product1.jpg","kurtka brązowa XL",139.99,2),
     new ItemInBasket("assets/img/product1.jpg","filetowa brązowa XL",139.99,2),
+    new ItemInBasket("assets/img/product1.jpg","zielona brązowa XL",139.99,2),
+    new ItemInBasket("assets/img/product1.jpg","filetowa brązowa XL",139.99,2),
     new ItemInBasket("assets/img/product1.jpg","zielona brązowa XL",139.99,2)
   ];
 

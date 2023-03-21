@@ -5,9 +5,10 @@
       <img [src]="item.imgURL"  alt="" class="photo">
       <div class="tools">
         <p>{{item.description}} </p>
-
-
-        <div class="sum"><h2>{{item.amount|number :'.2-2'}} zł</h2></div>
+        <div class="price"><h2>{{item.price|number :'.2-2'}} zł</h2></div>
+        <button id="buttonAdd" color="">Add cart</button>
       </div>
+
     </div>
+</div>
 </div>

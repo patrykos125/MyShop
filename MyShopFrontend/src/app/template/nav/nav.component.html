@@ -1,11 +1,13 @@
+<div class="container">
 
+  <p>Kategorie</p>
 <nav>
-  <ul *ngFor="let cat of category  ">
-    <li >
+  <ul class="category-list"  *ngFor="let cat of category  ">
+    <li>
       <a href="/cat">{{cat |lowercase }}</a>
     </li>
-
   </ul>
 </nav>
+</div>
 
 
