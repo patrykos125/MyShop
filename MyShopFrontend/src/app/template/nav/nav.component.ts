@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Category} from "../../classes/enums/category";
+import {Category} from "../../classes/enums/Category";
 
 @Component({
   selector: 'app-nav',

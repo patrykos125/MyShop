@@ -1,14 +1,15 @@
 <div class="container">
   <h1>To jest strona główna</h1>
   <div id="basketItems">
-    <div class="item" *ngFor="let item of basket.getArray();let indexOfelement=index;">
-      <img [src]="item.imgURL"  alt="" class="photo">
+    <div class="item" *ngFor="let item of items">
+      <img [src]="item.imgUrl" alt="" class="photo">
       <div class="tools">
-        <p>{{item.description}} </p>
+        <p>{{item.shortDescription}} </p>
         <div class="price"><h2>{{item.price|number :'.2-2'}} zł</h2></div>
-        <button id="buttonAdd" color="">Add cart</button>
+        <button id="buttonAdd"  >Add cart</button>
       </div>
 
     </div>
 </div>
 </div>
+
