@@ -1,10 +1,13 @@
 import {Item} from "./Item";
+import {Size} from "./enums/Size";
+import {Category} from "./enums/Category";
 
 export class ItemInBasket extends Item {
   amount: number;
 
-  constructor(imgURL: string, description: string, price: number, amount: number) {
-    super(imgURL, description, price);
+
+  constructor(id: number, shortDescription: string, longDescription: string, price: number, imgUrl: string, size: Size, category: Category, amount: number) {
+    super(id, shortDescription, longDescription, price, imgUrl, size, category);
     this.amount = amount;
   }
 

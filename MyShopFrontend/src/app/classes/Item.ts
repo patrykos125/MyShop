@@ -1,14 +1,24 @@
+import {Size} from "./enums/Size";
+import {Category} from "./enums/Category";
+
 export class Item {
-  imgURL: string;
-  description: string;
-  price: number
+
+  public id:number;
+  public shortDescription:string;
+  public longDescription:string;
+  public price:number;
+  public imgUrl:string;
+  public size:Size;
+  public category:Category;
 
 
-  constructor(imgURL: string, description: string, price: number) {
-    this.imgURL = imgURL;
-    this.description = description;
+  constructor(id: number, shortDescription: string, longDescription: string, price: number, imgUrl: string, size: Size, category: Category) {
+    this.id = id;
+    this.shortDescription = shortDescription;
+    this.longDescription = longDescription;
     this.price = price;
-
+    this.imgUrl = imgUrl;
+    this.size = size;
+    this.category = category;
   }
-
 }

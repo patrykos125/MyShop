@@ -1,12 +1,15 @@
-import {ItemInBasket} from "./itemInBasket";
+import {ItemInBasket} from "./ItemInBasket";
+import {Size} from "./enums/Size";
+import {Category} from "./enums/Category";
 
 
 export  class Basket{
   basket:ItemInBasket[]=[
-    new ItemInBasket("assets/img/product1.jpg","kurtka niebieska XL",139.99,2),
-    new ItemInBasket("assets/img/product1.jpg","kurtka brązowa XL",139.99,2),
-    new ItemInBasket("assets/img/product1.jpg","filetowa brązowa XL",139.99,2),
-    new ItemInBasket("assets/img/product1.jpg","zielona brązowa XL",139.99,2)
+    new ItemInBasket(1,"to jest jakis bardzo zwyczajny opis produktu","na razie dłuzszy opis nie jest potrzebny",120.88,"assets/img/product1.jpg",Size.L,Category.HOODIE, 2) ,
+    new ItemInBasket(1,"to jest jakis bardzo zwyczajny opis produktu","na razie dłuzszy opis nie jest potrzebny",120.88,"assets/img/product1.jpg",Size.L,Category.HOODIE, 2) ,
+    new ItemInBasket(1,"to jest jakis bardzo zwyczajny opis produktu","na razie dłuzszy opis nie jest potrzebny",120.88,"assets/img/product1.jpg",Size.L,Category.HOODIE, 2) ,
+    new ItemInBasket(1,"to jest jakis bardzo zwyczajny opis produktu","na razie dłuzszy opis nie jest potrzebny",120.88,"assets/img/product1.jpg",Size.L,Category.HOODIE, 2) ,
+    new ItemInBasket(1,"to jest jakis bardzo zwyczajny opis produktu","na razie dłuzszy opis nie jest potrzebny",120.88,"assets/img/product1.jpg",Size.L,Category.HOODIE, 2)
   ];
 
   public addItem(item:ItemInBasket){

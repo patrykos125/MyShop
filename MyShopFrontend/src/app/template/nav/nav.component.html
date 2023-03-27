@@ -1,11 +1,47 @@
-
-<nav>
-  <ul *ngFor="let cat of category  ">
-    <li >
-      <a href="/cat">{{cat |lowercase }}</a>
-    </li>
-
-  </ul>
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container px-5 px-lg-5">
+    <img src="assets/img/icon/shop.png" class="icon-logo" alt="favourite">
+    <a routerLink="/" id="logoShop">
+      <h1 class="display-4 fw-bolder">MyShop</h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+      class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+      </ul>
+<!--            <form class="d-flex">-->
+<!--              <button class="btn btn-outline-dark" type="submit">-->
+<!--      &lt;!&ndash;          <i class="bi-cart-fill me-1"></i>&ndash;&gt;-->
+<!--      &lt;!&ndash;          Basket&ndash;&gt;-->
+<!--                <a routerLink="/user-profile">-->
+<!--                  <img src="assets/img/icon/user-in-a-square.png" class="icon"  alt="user-profile">-->
+<!--                  </a>-->
+<!--      &lt;!&ndash;          <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>&ndash;&gt;-->
+<!--              </button>-->
+<!--            </form>-->
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#!">
+            <img src="assets/img/icon/heart.png" class="icon" alt="favourite">
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#!">
+            <a routerLink="/basket"><img src="assets/img/icon/shopping-cart.png" class="icon" alt="basket"></a>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#!">
+            <a routerLink="/user-profile">
+              <img src="assets/img/icon/user-in-a-square.png" class="icon" alt="user-profile">
+            </a>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>
 
 

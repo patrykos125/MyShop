@@ -2,9 +2,9 @@
 <div id="content">
   <div id="basketItems">
     <div class="item" *ngFor="let item of basket.getArray();let indexOfelement=index;">
-      <img [src]="item.imgURL"  alt="" class="photo">
+      <img [src]="item.imgUrl"  alt="" class="photo">
       <div class="tools">
-        <p>{{item.description}} </p>
+        <p>{{item.shortDescription}} </p>
 
       <div class="amount">
         <div class="minus" (click)="item.decreaseamount()" >-</div>

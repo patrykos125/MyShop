@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {ItemInBasket} from "../classes/itemInBasket";
+import {ItemInBasket} from "../classes/ItemInBasket";
 import {Basket} from "../classes/Basket";
 
 @Component({
