@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import {RouterLink, RouterOutlet} from "@angular/router";
 import { AppComponent } from '../app.component';
 import {HttpClientModule} from "@angular/common/http";
+import { UserProfileComponent } from '../user-profile/user-profile.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {HttpClientModule} from "@angular/common/http";
     NavComponent,
     FooterComponent,
     BasketComponent,
-    AppComponent
+    AppComponent,
+    UserProfileComponent
 
   ],
   imports: [
