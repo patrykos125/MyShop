@@ -38,13 +38,13 @@ public class UserController {
 
     public List<Order> FillListArchive(){
         List<Order> archive = new ArrayList<>();
-        archive.add(new Order(4, LocalDate.now(), new Item[]{new Item(4,"","", Size.M, Category.HOODIE,122.99,""), new Item(5,"","", Size.M, Category.SHOES,222.99,"")}, "Zakończone"));
+        archive.add(new Order(4, LocalDate.now(), new Item[]{new Item(4,"","", Size.M, Category.HOODIE,122.99,"",20,true), new Item(5,"","", Size.M, Category.SHOES,222.99,"",20,true)}, "Zakończone"));
         return archive;
     }
     public List<Order> FillListActive(){
         List<Order> active = new ArrayList<>();
-        active.add(new Order(1, LocalDate.now().minusMonths(1), new Item[]{new Item(2,"","", Size.M, Category.TROUSERS,12.99,""), new Item(0,"","", Size.M, Category.CAP,32.99,"")}, "Gotowe do wysylki"));
-        active.add(new Order(2, LocalDate.now().minusDays(1), new Item[]{new Item(3,"","", Size.M, Category.DRESS,72.99,"")}, "Kompletowane"));
+        active.add(new Order(1, LocalDate.now().minusMonths(1), new Item[]{new Item(2,"","", Size.M, Category.TROUSERS,12.99,"",20,true), new Item(0,"","", Size.M, Category.CAP,32.99,"",20,true)}, "Gotowe do wysylki"));
+        active.add(new Order(2, LocalDate.now().minusDays(1), new Item[]{new Item(3,"","", Size.M, Category.DRESS,72.99,"",20,true)}, "Kompletowane"));
         return active;
     }
 

@@ -6,8 +6,8 @@ export class ItemInBasket extends Item {
   amount: number;
 
 
-  constructor(id: number, shortDescription: string, longDescription: string, price: number, imgUrl: string, size: Size, category: Category, amount: number) {
-    super(id, shortDescription, longDescription, price, imgUrl, size, category);
+  constructor(id: number, shortDescription: string, longDescription: string, price: number, imgUrl: string, size: Size, category: Category, oldPrice: number, sale: boolean, amount: number) {
+    super(id, shortDescription, longDescription, price, imgUrl, size, category, oldPrice, sale);
     this.amount = amount;
   }
 

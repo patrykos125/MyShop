@@ -12,6 +12,8 @@ import {RouterLink, RouterOutlet} from "@angular/router";
 import { AppComponent } from '../app.component';
 import {HttpClientModule} from "@angular/common/http";
 import { UserProfileComponent } from '../user-profile/user-profile.component';
+import {NgOptimizedImage} from "@angular/common";
+import {CategoryComponent} from "../category/category.component";
 
 
 @NgModule({
@@ -23,7 +25,8 @@ import { UserProfileComponent } from '../user-profile/user-profile.component';
     FooterComponent,
     BasketComponent,
     AppComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    CategoryComponent
 
   ],
   imports: [
@@ -31,7 +34,8 @@ import { UserProfileComponent } from '../user-profile/user-profile.component';
     AppRoutingModule,
     RouterOutlet,
     RouterLink,
-    HttpClientModule
+    HttpClientModule,
+    NgOptimizedImage
   ],
   providers: [],
   bootstrap: [AppComponent]

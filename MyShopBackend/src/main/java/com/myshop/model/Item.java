@@ -22,5 +22,7 @@ public class Item implements Serializable {
    private Category category;
    private double price;
    private String imgUrl;
+   private double oldPrice;
+   private boolean sale;
 }
 

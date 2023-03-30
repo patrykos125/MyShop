@@ -1,7 +1,7 @@
 
 <div id="content">
   <div id="basketItems">
-    <div class="item" *ngFor="let item of basket.getArray();let indexOfelement=index;">
+    <div class="item bg-primary-subtle" *ngFor="let item of basket.getArray();let indexOfelement=index;">
       <img [src]="item.imgUrl"  alt="" class="photo">
       <div class="tools">
         <p>{{item.shortDescription}} </p>

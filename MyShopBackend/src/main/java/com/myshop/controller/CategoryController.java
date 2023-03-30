@@ -12,15 +12,18 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+
 @RestController
-public class ItemController {
+public class CategoryController {
 
     @Autowired
     ItemRepository itemRepository;
 
     @CrossOrigin(origins = "http://localhost:4200")
-    @GetMapping("item/{id}")
-    ResponseEntity<Item> item(@PathVariable("id") Long id ){
-        return new ResponseEntity<>( itemRepository.findItemById(id), HttpStatus.OK);
+    @GetMapping("/{category}")
+    ResponseEntity<List<Item>> category(@PathVariable("category")Category category ){
+        return new ResponseEntity<>( itemRepository.findAllByCategory(category), HttpStatus.OK);
     }
+
+
 }

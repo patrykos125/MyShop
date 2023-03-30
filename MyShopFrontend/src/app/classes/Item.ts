@@ -10,9 +10,11 @@ export class Item {
   public imgUrl:string;
   public size:Size;
   public category:Category;
+  public  oldPrice:number;
+  public  sale:boolean;
 
 
-  constructor(id: number, shortDescription: string, longDescription: string, price: number, imgUrl: string, size: Size, category: Category) {
+  constructor(id: number, shortDescription: string, longDescription: string, price: number, imgUrl: string, size: Size, category: Category, oldPrice: number, sale: boolean) {
     this.id = id;
     this.shortDescription = shortDescription;
     this.longDescription = longDescription;
@@ -20,5 +22,7 @@ export class Item {
     this.imgUrl = imgUrl;
     this.size = size;
     this.category = category;
+    this.oldPrice = oldPrice;
+    this.sale = sale;
   }
 }
