@@ -11,6 +11,9 @@ import { AppRoutingModule } from './app-routing.module';
 import {RouterLink, RouterOutlet} from "@angular/router";
 import { AppComponent } from '../app.component';
 import {HttpClientModule} from "@angular/common/http";
+import { UserProfileComponent } from '../user-profile/user-profile.component';
+import {NgOptimizedImage} from "@angular/common";
+import {CategoryComponent} from "../category/category.component";
 
 
 @NgModule({
@@ -21,7 +24,9 @@ import {HttpClientModule} from "@angular/common/http";
     NavComponent,
     FooterComponent,
     BasketComponent,
-    AppComponent
+    AppComponent,
+    UserProfileComponent,
+    CategoryComponent
 
   ],
   imports: [
@@ -29,7 +34,8 @@ import {HttpClientModule} from "@angular/common/http";
     AppRoutingModule,
     RouterOutlet,
     RouterLink,
-    HttpClientModule
+    HttpClientModule,
+    NgOptimizedImage
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -14,4 +14,9 @@ export class ItemService {
     return  this.http.get<Item[]>("http://localhost:8080/");
 
   }
+  public getCategoryItem(category: string | null):Observable<Array<Item>>{
+
+    return  this.http.get<Item[]>(`http://localhost:8080/${category?.toUpperCase()}`);
+
+  }
 }
