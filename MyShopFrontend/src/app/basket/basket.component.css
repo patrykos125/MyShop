@@ -1,73 +1,74 @@
-/*#content{*/
-/*  margin-top: 50px;*/
-/*  !*padding: 10px;*!*/
-/*  display: flex;*/
-/*  flex-wrap: wrap;*/
-/*}*/
-/*#basketItems{*/
-/*  display: flex;*/
-/*  flex-wrap: wrap;*/
-/*  justify-content: center;*/
-/*}*/
+#content{
+  margin-top: 100px;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+#basketItems{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-/*.item{*/
-/*  background-color: lightblue;*/
-/*  display: flex;*/
-/*  gap: 10px;*/
-/*  flex-wrap: wrap;*/
-/*  padding: 5px;*/
-/*  margin: 10px;*/
-/*}*/
-/*.photo{*/
-/*  max-height: 200px;*/
-/*  width: auto;*/
-/*}*/
-/*.tools{*/
-/*  display: flex;*/
-/*  flex-direction: column;*/
-/*  align-items: center;*/
-/*}*/
-/*item p{*/
+.item{
+  background-color: lightblue;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 5px;
+  margin: 10px;
+}
+.photo{
+  max-height: 200px;
+  width: auto;
+}
+.tools{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+item p{
 
-/*}*/
-/*.amount{*/
-/*  display: flex;*/
-/*  font-size: 42px;*/
-/*}*/
-/*.minus{*/
-/*  font-weight: bold;*/
-/*  font-size: 42px;*/
-/*  margin-right: 15px;*/
-/*  border:1px  solid black;*/
-/*  width: 50px;*/
-/*  text-align: center;*/
-/*  cursor: pointer;*/
+}
+.amount{
+  display: flex;
+  font-size: 42px;
+}
+.minus{
+  font-weight: bold;
+  font-size: 42px;
+  margin-right: 15px;
+  border:1px  solid black;
+  width: 50px;
+  text-align: center;
+  cursor: pointer;
 
-/*}*/
-/*.plus{*/
-/*  font-weight: bold;*/
-/*  font-size: 42px;*/
-/*  margin-left: 15px;*/
-/*  border: 1px solid black;*/
-/*  width: 50px;*/
-/*  text-align: center;*/
-/*  cursor: pointer;*/
+}
+.plus{
+  font-weight: bold;
+  font-size: 42px;
+  margin-left: 15px;
+  border: 1px solid black;
+  width: 50px;
+  text-align: center;
+  cursor: pointer;
 
-/*}*/
-/*.sum*/
-/*{*/
-/*  margin: 20px;*/
+}
+.sum
+{
+  margin: 20px;
 
-/*}*/
-/*.trash-icon{*/
-/*  height: 50px;*/
-/*  width: 50px;*/
-/*  cursor: pointer;*/
-/*}*/
+}
+.trash-icon{
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
 
-/*aside{*/
-/*  background-color: seashell;*/
-/*  padding: 20px;*/
-/*  font-size: 24px;*/
+aside{
+  background-color: seashell;
+  padding: 20px;
+  font-size: 24px;
 
-/*}*/
+}
