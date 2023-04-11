@@ -1,11 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Basket} from "../classes/Basket";
 import {ItemService} from "../service/item.service";
 import {Item} from "../classes/Item";
-import {Observable} from "rxjs";
-
-
-
+import { BasketService } from '../service/basket.service';
 
 @Component({
   selector: 'app-home-page',
@@ -16,7 +12,7 @@ export class HomePageComponent implements OnInit{
 
  public items: Item[] | undefined  ;
 
-  constructor(private itemService: ItemService) {
+  constructor(private itemService: ItemService, private basketService: BasketService) {
 
   }
   public getItems():void{
@@ -30,5 +26,18 @@ export class HomePageComponent implements OnInit{
   ngOnInit(): void {
     this.getItems()
   }
+
+  public checkItem(itemID: number):boolean{
+    return this.basketService.CheckCart(itemID);
+  }
+
+  public addItem(itemID: number){
+    this.basketService.addItemToBasket(itemID);
+  }
+
+  public removeItem(itemID:number){
+  this.basketService.removeItemFromBasket(itemID);
+  }
+
 
 }

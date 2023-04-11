@@ -1,0 +1,79 @@
+<div [@fadeIn]>
+<div class="container mt-4">
+    <div class="row">
+      <div class="col-md-6">
+        <img [src]="ThisItem?.imgUrl" alt="" class="card-img-top">
+      </div>
+      <div class="col-md-6 shadow-lg p-3 mb-5 bg-white rounded">
+        <h2 class="mb-4 text-center">{{ThisItem?.shortDescription}}</h2>
+        <p class="lead mb-4">{{ThisItem?.longDescription}}</p>
+        <h5 class="mb-3">Item Details:</h5>
+        <ul class="list-group list-group-flush mb-4">
+          <li class="list-group-item">Category: {{ThisItem?.category}}</li>
+          <li class="list-group-item">Size: {{ThisItem?.size}}</li>
+        </ul>
+        <h5 class="mb-3 text-center">Rating</h5>
+        <div class="d-flex justify-content-center small mb-2">
+        <span class="star" *ngFor="let star of [1, 2, 3, 4, 5]" [class.full]="star <= 2" [class.empty]="star > 2">
+          <div [class.bi-star-fill]="true" [class.text-warning]="star <= 2"></div>
+        </span>
+         <span>(2)</span>
+        </div>
+        <h5 class="mb-3 text-center mt-3">Price</h5>
+        <div class="justify-content-center text-center">
+        <div  class="badge bg-dark text-white m-1" *ngIf="ThisItem?.sale" style="top: 0.5rem; right: 0.5rem">Sale</div>
+        <span class="text-muted text-decoration-line-through" *ngIf="ThisItem?.sale">{{ThisItem?.oldPrice}} zł</span>
+        <div class="text-center pb-5">{{ThisItem?.price}}zł</div>
+       </div>
+       <div class="card-footer p-3 p-sm-4 pt-0 border-top-0 bg-transparent">
+        <div *ngIf="!checkItem(ThisItem!.id)" class="text-center"><a class="btn btn-outline-dark mt-auto" (click)="addItem(ThisItem!.id)">Add to cart</a></div>
+        <div *ngIf="checkItem(ThisItem!.id)" class="text-center"><a class="btn btn-outline-dark mt-auto" (click)="removeItem(ThisItem!.id)">Remove from cart</a></div>
+      </div>
+      </div>
+    </div>
+    <div class="container my-5">
+      <h3>Comments</h3>
+      <hr>
+      <div class="row">
+        <div class="col-md-8">
+          <div class="card mb-3 shadow-sm bg-white rounded">
+            <div class="card-body">
+              <h5 class="card-title">John</h5>
+              <div class="d-flex  small mb-2">
+                <span class="star" *ngFor="let star of [1, 2, 3, 4, 5]" [class.full]="star <= 2" [class.empty]="star > 2">
+                  <div [class.bi-star-fill]="true" [class.text-warning]="star <= 2"></div>
+                </span>
+                </div> 
+              
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam euismod mi non felis blandit tincidunt. Sed non augue vel velit vestibulum bibendum. Fusce quis libero euismod, lobortis nunc at, interdum enim. Suspendisse vestibulum bibendum ante eu molestie. Nullam nec magna urna. </p>
+              <p class="card-text"><small class="text-muted">2 days ago</small></p>
+            </div>
+          </div>
+          <div class="card mb-3 shadow-sm bg-white rounded">
+            <div class="card-body">
+              <h5 class="card-title">Jane</h5>
+              <div class="d-flex  small mb-2">
+                <span class="star" *ngFor="let star of [1, 2, 3, 4, 5]" [class.full]="star <= 4" [class.empty]="star > 4">
+                  <div [class.bi-star-fill]="true" [class.text-warning]="star <= 4.5"></div>
+                </span>
+                </div> 
+              <p class="card-text">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec a lectus vel elit hendrerit commodo. Praesent volutpat est vel libero finibus bibendum. Duis vel elit malesuada, rhoncus leo ut, bibendum lectus. </p>
+              <p class="card-text"><small class="text-muted">3 days ago</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <form>
+            <div class="form-group">
+              <label for="commentText">Comment:</label>
+              <textarea class="form-control" id="commentText" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary mt-2">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

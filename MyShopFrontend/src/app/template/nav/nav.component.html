@@ -19,8 +19,12 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#!">
-            <a routerLink="/basket"><img src="assets/img/icon/shopping-cart.png" class="icon" alt="basket"></a>
+          <a routerLink="/basket" class="nav-link">
+            <img src="assets/img/icon/shopping-cart.png" class="icon" alt="basket">
+            
+            <span *ngIf="BasketCount > 0" class="itemcount translate-middle badge rounded-pill bg-danger" style="margin-left: -50px;">
+              {{BasketCount}} 
+            </span>
           </a>
         </li>
         <li class="nav-item">

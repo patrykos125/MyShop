@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HomePageComponent } from '../home-page/home-page.component';
 import {HeaderComponent} from "../template/header/header.component";
@@ -15,6 +15,7 @@ import { UserProfileComponent } from '../user-profile/user-profile.component';
 import {NgOptimizedImage} from "@angular/common";
 import {CategoryComponent} from "../category/category.component";
 import {CategoryListComponent} from "../template/category-list/category-list.component";
+import { ItemPageComponent } from '../item-page/item-page.component';
 
 
 @NgModule({
@@ -28,8 +29,8 @@ import {CategoryListComponent} from "../template/category-list/category-list.com
     AppComponent,
     UserProfileComponent,
     CategoryComponent,
-    CategoryListComponent
-
+    CategoryListComponent,
+    ItemPageComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +38,8 @@ import {CategoryListComponent} from "../template/category-list/category-list.com
     RouterOutlet,
     RouterLink,
     HttpClientModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

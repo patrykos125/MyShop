@@ -1,5 +1,13 @@
 
-<div id="content" class="col-10">
+<div id="content">
+  <div *ngIf="basket.getArray().length == 0; else itemsExist">
+    <div class="card p-2">
+      <aside>
+        <p class="text-center">Brak przedmiotów w koszyku.</p>
+      </aside>
+    </div>
+  </div>
+  <ng-template #itemsExist>
   <div id="basketItems" >
     <div class="item  card h-100" *ngFor="let item of basket.getArray();let indexOfelement=index;">
       <div class="card-img-top text-center"><img [src]="item.imgUrl"  alt="" class="photo"></div>
@@ -12,14 +20,14 @@
         <div class="plus btn " (click)="item.increaseAmount()" >+</div>
       </div>
       <div class="sum"><h2>{{item.getSum() |number :'.2-2'}} zł</h2></div>
-      <img src="assets/img/icon/trash-can.png" (click)="basket.romeveItem(indexOfelement)" class="trash-icon" alt="">
+      <img src="assets/img/icon/trash-can.png" (click)="RemoveItem(item.id, indexOfelement)" class="trash-icon" alt="">
       </div>
     </div>
     </div>
 
 
   </div>
-
+</ng-template>
 
 </div>
 <aside class="h-100 mt-2 " *ngIf="basket.getSum()!=0"> Wartość produktów <b>{{basket.getSum() |number :'.2-2'}} zł </b><br>

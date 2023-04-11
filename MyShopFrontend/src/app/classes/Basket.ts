@@ -1,19 +1,16 @@
 import {ItemInBasket} from "./ItemInBasket";
 import {Size} from "./enums/Size";
 import {Category} from "./enums/Category";
+import { Item } from "./Item";
 
 
 export  class Basket{
-  basket:ItemInBasket[]=[
+  basket:ItemInBasket[]=[];
 
-    new ItemInBasket(1,"to jest jakis bardzo zwyczajny opis produktu","na razie dłuzszy opis nie jest potrzebny",120.88,"assets/img/product1.jpg",Size.L,Category.HOODIE, 20,true,3) ,
-    new ItemInBasket(1,"to jest jakis bardzo zwyczajny opis produktu","na razie dłuzszy opis nie jest potrzebny",120.88,"assets/img/product1.jpg",Size.L,Category.HOODIE, 20,true,3) ,
-    new ItemInBasket(1,"to jest jakis bardzo zwyczajny opis produktu","na razie dłuzszy opis nie jest potrzebny",120.88,"assets/img/product1.jpg",Size.L,Category.HOODIE, 20,true,3) ,
-    new ItemInBasket(1,"to jest jakis bardzo zwyczajny opis produktu","na razie dłuzszy opis nie jest potrzebny",120.88,"assets/img/product1.jpg",Size.L,Category.HOODIE, 20,true,3)
-  ];
-
-  public addItem(item:ItemInBasket){
-    this.basket.push(item);
+  public addItem(item:Item){
+ //   this.basket.push(item);
+     let newItem: ItemInBasket  = new ItemInBasket(item.id, item.shortDescription, item.longDescription, item.price, item.imgUrl, item.size,item.category,item.oldPrice,item.sale,1);
+     this.basket.push(newItem);
   }
   public romeveItem(index:number){
 

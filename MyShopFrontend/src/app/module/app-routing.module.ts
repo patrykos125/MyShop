@@ -5,6 +5,7 @@ import {HomePageComponent} from "../home-page/home-page.component";
 import {BasketComponent} from "../basket/basket.component";
 import {UserProfileComponent} from "../user-profile/user-profile.component";
 import {CategoryComponent} from "../category/category.component";
+import { ItemPageComponent } from '../item-page/item-page.component';
 
 
 const routes:Routes=[
@@ -13,11 +14,8 @@ const routes:Routes=[
   {path:'',component:HomePageComponent},
   {path:'basket',component:BasketComponent},
   {path:'user-profile', component: UserProfileComponent},
-  {path:':category', component: CategoryComponent }
-
-
-
-
+  {path:':category', component: CategoryComponent },
+  {path: 'item/:id', component: ItemPageComponent }
 
 ]
 @NgModule({
