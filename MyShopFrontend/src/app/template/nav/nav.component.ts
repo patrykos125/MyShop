@@ -8,7 +8,7 @@ import {Category} from "../../classes/enums/Category";
 })
 export class NavComponent {
 
-  category=Object.keys(Category).filter(value => isNaN(Number(value)));
+
 
 
 

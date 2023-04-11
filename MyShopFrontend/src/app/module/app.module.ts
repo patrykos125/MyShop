@@ -14,6 +14,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { UserProfileComponent } from '../user-profile/user-profile.component';
 import {NgOptimizedImage} from "@angular/common";
 import {CategoryComponent} from "../category/category.component";
+import {CategoryListComponent} from "../template/category-list/category-list.component";
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {CategoryComponent} from "../category/category.component";
     BasketComponent,
     AppComponent,
     UserProfileComponent,
-    CategoryComponent
+    CategoryComponent,
+    CategoryListComponent
 
   ],
   imports: [
