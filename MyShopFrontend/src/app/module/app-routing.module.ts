@@ -6,6 +6,7 @@ import {BasketComponent} from "../basket/basket.component";
 import {UserProfileComponent} from "../user-profile/user-profile.component";
 import {CategoryComponent} from "../category/category.component";
 import { ItemPageComponent } from '../item-page/item-page.component';
+import {RegistrationPageComponent} from "../registration-page/registration-page.component";
 
 
 const routes:Routes=[
@@ -14,6 +15,7 @@ const routes:Routes=[
   {path:'',component:HomePageComponent},
   {path:'basket',component:BasketComponent},
   {path:'user-profile', component: UserProfileComponent},
+  {path: 'registration', component: RegistrationPageComponent },
   {path:':category', component: CategoryComponent },
   {path: 'item/:id', component: ItemPageComponent }
 

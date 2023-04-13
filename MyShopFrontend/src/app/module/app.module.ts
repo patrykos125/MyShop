@@ -16,6 +16,9 @@ import {NgOptimizedImage} from "@angular/common";
 import {CategoryComponent} from "../category/category.component";
 import {CategoryListComponent} from "../template/category-list/category-list.component";
 import { ItemPageComponent } from '../item-page/item-page.component';
+import {RegistrationPageComponent} from "../registration-page/registration-page.component";
+import {FormsModule} from "@angular/forms";
+
 
 
 @NgModule({
@@ -30,7 +33,9 @@ import { ItemPageComponent } from '../item-page/item-page.component';
     UserProfileComponent,
     CategoryComponent,
     CategoryListComponent,
-    ItemPageComponent
+    ItemPageComponent,
+    RegistrationPageComponent
+
   ],
   imports: [
     BrowserModule,
@@ -39,7 +44,8 @@ import { ItemPageComponent } from '../item-page/item-page.component';
     RouterLink,
     HttpClientModule,
     NgOptimizedImage,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

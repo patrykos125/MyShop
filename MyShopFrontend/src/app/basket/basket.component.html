@@ -20,7 +20,7 @@
         <div class="plus btn " (click)="item.increaseAmount()" >+</div>
       </div>
       <div class="sum"><h2>{{item.getSum() |number :'.2-2'}} zł</h2></div>
-      <img src="assets/img/icon/trash-can.png" (click)="RemoveItem(item.id, indexOfelement)" class="trash-icon" alt="">
+      <img src="assets/img/icon/trash-can.png" (click)="RemoveItem(item.itemId, indexOfelement)" class="trash-icon" alt="">
       </div>
     </div>
     </div>

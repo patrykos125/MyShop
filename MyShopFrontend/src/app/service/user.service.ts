@@ -11,6 +11,9 @@ export class UserService{
 
     constructor(private http: HttpClient) { }
     getUser(): Observable<User> {
-        return this.http.get<User>("http://localhost:8080/user");;
+        return this.http.get<User>("http://localhost:8080/user");
+   }
+   rejestreduser(){
+
    }
 }

@@ -37,10 +37,10 @@ export class BasketComponent implements OnInit{
     this.basket.romeveItem(Index);
   }
 
-  
+
   public getMatchingItems(): void {
     const ids: number[] = JSON.parse(sessionStorage.getItem('basketIds') || '[]').map(Number);
-    this.matchingItems = this.items?.filter(item =>  ids.includes(item.id));
+    this.matchingItems = this.items?.filter(item =>  ids.includes(item.itemId));
     this.matchingItems?.forEach(item=>{
       this.basket.addItem(item);
     });

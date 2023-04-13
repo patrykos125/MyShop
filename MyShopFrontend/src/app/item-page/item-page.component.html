@@ -26,8 +26,8 @@
         <div class="text-center pb-5">{{ThisItem?.price}}zł</div>
        </div>
        <div class="card-footer p-3 p-sm-4 pt-0 border-top-0 bg-transparent">
-        <div *ngIf="!checkItem(ThisItem!.id)" class="text-center"><a class="btn btn-outline-dark mt-auto" (click)="addItem(ThisItem!.id)">Add to cart</a></div>
-        <div *ngIf="checkItem(ThisItem!.id)" class="text-center"><a class="btn btn-outline-dark mt-auto" (click)="removeItem(ThisItem!.id)">Remove from cart</a></div>
+        <div *ngIf="!checkItem(ThisItem!.itemId)" class="text-center"><a class="btn btn-outline-dark mt-auto" (click)="addItem(ThisItem!.itemId)">Add to cart</a></div>
+        <div *ngIf="checkItem(ThisItem!.itemId)" class="text-center"><a class="btn btn-outline-dark mt-auto" (click)="removeItem(ThisItem!.itemId)">Remove from cart</a></div>
       </div>
       </div>
     </div>
@@ -43,8 +43,8 @@
                 <span class="star" *ngFor="let star of [1, 2, 3, 4, 5]" [class.full]="star <= 2" [class.empty]="star > 2">
                   <div [class.bi-star-fill]="true" [class.text-warning]="star <= 2"></div>
                 </span>
-                </div> 
-              
+                </div>
+
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam euismod mi non felis blandit tincidunt. Sed non augue vel velit vestibulum bibendum. Fusce quis libero euismod, lobortis nunc at, interdum enim. Suspendisse vestibulum bibendum ante eu molestie. Nullam nec magna urna. </p>
               <p class="card-text"><small class="text-muted">2 days ago</small></p>
             </div>
@@ -56,7 +56,7 @@
                 <span class="star" *ngFor="let star of [1, 2, 3, 4, 5]" [class.full]="star <= 4" [class.empty]="star > 4">
                   <div [class.bi-star-fill]="true" [class.text-warning]="star <= 4.5"></div>
                 </span>
-                </div> 
+                </div>
               <p class="card-text">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec a lectus vel elit hendrerit commodo. Praesent volutpat est vel libero finibus bibendum. Duis vel elit malesuada, rhoncus leo ut, bibendum lectus. </p>
               <p class="card-text"><small class="text-muted">3 days ago</small></p>
             </div>

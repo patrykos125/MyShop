@@ -9,7 +9,7 @@ export  class Basket{
 
   public addItem(item:Item){
  //   this.basket.push(item);
-     let newItem: ItemInBasket  = new ItemInBasket(item.id, item.shortDescription, item.longDescription, item.price, item.imgUrl, item.size,item.category,item.oldPrice,item.sale,1);
+     let newItem: ItemInBasket  = new ItemInBasket(item.itemId, item.shortDescription, item.longDescription, item.price, item.imgUrl, item.size,item.category,item.oldPrice,item.sale,1);
      this.basket.push(newItem);
   }
   public romeveItem(index:number){
