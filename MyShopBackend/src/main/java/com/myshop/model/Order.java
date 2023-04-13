@@ -8,7 +8,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-
 @Entity
 public class Order {
 
@@ -21,7 +20,7 @@ public class Order {
     private Client client;
 
     @OneToMany
-    @JoinColumn(name = "client_orders_id")
+    @JoinColumn(name = "order_id")
     private List<Item> items = new ArrayList<>();
 
 
@@ -30,5 +29,5 @@ public class Order {
 
     @OneToOne
     private Shipment shipment;
-    private LocalDate date;
+
 }

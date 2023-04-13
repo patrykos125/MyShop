@@ -13,7 +13,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 public class Item implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private long id;
    private String  shortDescription;
    private String longDescription;
