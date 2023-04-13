@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+@Entity(name = "Orders")
 public class Order {
 
     @Id
@@ -16,13 +16,12 @@ public class Order {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "clinet_id")
+    @JoinColumn(name = "client_id")
     private Client client;
 
     @OneToMany
-    @JoinColumn(name = "order_id")
+    @JoinColumn(name = "orders_id")
     private List<Item> items = new ArrayList<>();
-
 
     @OneToOne
     private Status status;
