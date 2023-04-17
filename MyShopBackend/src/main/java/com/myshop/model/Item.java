@@ -17,7 +17,7 @@ public class Item implements Serializable {
    private long id;
    private String  shortDescription;
    private String longDescription;
-   private Size size;
+   private String size;
    private Category category;
    private double price;
    private String imgUrl;
