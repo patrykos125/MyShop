@@ -30,34 +30,42 @@ public class SessionFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 
-        String sessionKey = request.getHeader(HttpHeaders.AUTHORIZATION);
 
-        if(sessionKey == null ||sessionKey.length()==0){
-            filterChain.doFilter(request,response);
-        }
+        if(request.getRequestURI().endsWith("/user")||request.getRequestURI().endsWith("/basket")){
+            String sessionKey = request.getHeader(HttpHeaders.AUTHORIZATION);
 
-        String email = sessionRegistry.getEmailForSession(sessionKey);
+            if(sessionKey == null ||sessionKey.length()==0){
+                filterChain.doFilter(request,response);
+            }
+            String email = sessionRegistry.getEmailForSession(sessionKey);
 
-        if(email == null){
-            filterChain.doFilter(request,response);
+            if(email == null){
+                filterChain.doFilter(request,response);
 
-        }
-       if(request.getRequestURI().endsWith("/registration")||request.getRequestURI().endsWith("/h2-console/**")){
-           filterChain.doFilter(request,response);
-       }else {
-           final User user = (User) userService.loadUserByUsername(email);
+            }
+            final User user = (User) userService.loadUserByUsername(email);
 
-           UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(
-                   user, null, user.getAuthorities()
-           );
+            UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(
+                    user, null, user.getAuthorities()
+            );
 
-           token.setDetails(
-                   new WebAuthenticationDetailsSource().buildDetails(request));
+            token.setDetails(
+                    new WebAuthenticationDetailsSource().buildDetails(request));
 
-           SecurityContextHolder.getContext().setAuthentication(token);
-           filterChain.doFilter(request, response);
+            SecurityContextHolder.getContext().setAuthentication(token);
+            filterChain.doFilter(request, response);
+        }else
+        filterChain.doFilter(request,response);
 
-       }
+
+
+
+
+
+
+
+
+
 
 
     }

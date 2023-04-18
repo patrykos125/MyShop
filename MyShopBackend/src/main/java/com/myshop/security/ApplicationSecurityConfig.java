@@ -48,7 +48,6 @@ public class ApplicationSecurityConfig      {
                                 HttpServletResponse.SC_UNAUTHORIZED,
                                 ex.getMessage())
                 ).and()
-                .authenticationProvider(daoAuthenticationProvider())
                 .csrf()
                 .disable()
                 .headers()
@@ -62,12 +61,7 @@ public class ApplicationSecurityConfig      {
 
 
     }
-    public DaoAuthenticationProvider daoAuthenticationProvider (){
-        DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
-        provider.setPasswordEncoder(passwordEncoder);
-        provider.setUserDetailsService(userService);
-        return provider;
-    }
+
 
     @Bean
     public AuthenticationManager authenticationManager (AuthenticationConfiguration authenticationConfiguration) throws Exception{

@@ -41,7 +41,7 @@ public class SessionRegistry {
         if (isPresent){
           return   sessionRepository.findSessionBySessionKey(sessionKey).get().getUser().getEmail();
         }
-        return "";
+        return "Nie znaleziono";
 
 
 
