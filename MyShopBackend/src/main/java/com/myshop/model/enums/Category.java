@@ -10,5 +10,6 @@ public enum Category {
     SOCKS,
     HOODIE,
     JACKET,
-    SHIRT, SKIRT
+    SHIRT,
+    SKIRT
 }

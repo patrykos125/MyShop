@@ -24,8 +24,8 @@ public class ApplicationSecurityConfig      {
     UserService userService;
     SessionFilter sessionFilter;
 
-    public static String[] publicEndPoints = {"/","/login","/registration","/item/**","/h2-console/*",
-            "/SHOES", "/T-SHIRT", "/TROUSERS", "/CAP", "/DRESS", "/SHORTS", "/SOCKS", "/HOODIE", "/JACKET", "/SHIRT", "/SKIRT"};
+    public static String[] publicEndPoints = {"/","/login","/registration","/item/**","/h2-console/**","/h2-console",
+            "/shoes", "/t-shirt", "/trousers", "/cap", "/dress", "/shorts", "/socks", "/hoodie", "/jacket", "/shirt", "/skirt"};
 
 
     @Bean

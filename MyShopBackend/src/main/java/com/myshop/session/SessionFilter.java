@@ -42,19 +42,22 @@ public class SessionFilter extends OncePerRequestFilter {
             filterChain.doFilter(request,response);
 
         }
-      final   User user = (User) userService.loadUserByUsername(email);
+       if(request.getRequestURI().endsWith("/registration")||request.getRequestURI().endsWith("/h2-console/**")){
+           filterChain.doFilter(request,response);
+       }else {
+           final User user = (User) userService.loadUserByUsername(email);
 
-        UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(
-                user, null, user.getAuthorities()
-        );
+           UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(
+                   user, null, user.getAuthorities()
+           );
 
-        token.setDetails(
-                new WebAuthenticationDetailsSource().buildDetails(request)  );
+           token.setDetails(
+                   new WebAuthenticationDetailsSource().buildDetails(request));
 
-        SecurityContextHolder.getContext().setAuthentication(token);
-        filterChain.doFilter(request,response);
+           SecurityContextHolder.getContext().setAuthentication(token);
+           filterChain.doFilter(request, response);
 
-
+       }
 
 
     }
