@@ -31,7 +31,7 @@ public class SessionFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 
 
-        if(request.getRequestURI().endsWith("/user")||request.getRequestURI().endsWith("/basket")){
+        if(request.getRequestURI().endsWith("/user")){
             String sessionKey = request.getHeader(HttpHeaders.AUTHORIZATION);
 
             if(sessionKey == null ||sessionKey.length()==0){

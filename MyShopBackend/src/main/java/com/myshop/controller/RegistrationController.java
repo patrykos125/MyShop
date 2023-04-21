@@ -31,7 +31,6 @@ public class RegistrationController {
              newUser.setPassword(passwordEncoder.encode(newUser.getPassword()));
              String sessionKey = sessionRegistry.generateSessionKey();
              newUser.setSession(new Session(sessionKey));
-             System.out.println(sessionKey);
              saved = userRepository.save(newUser);
              System.out.println(saved + " was added to database");
 

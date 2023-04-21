@@ -2,8 +2,13 @@ package com.myshop.security;
 
 import com.myshop.service.UserService;
 import com.myshop.session.SessionFilter;
+
+import jakarta.servlet.Servlet;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.AllArgsConstructor;
+
+import org.h2.server.web.WebServlet;
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -24,8 +29,10 @@ public class ApplicationSecurityConfig      {
     UserService userService;
     SessionFilter sessionFilter;
 
-    public static String[] publicEndPoints = {"/","/login","/registration","/item/**","/h2-console/**","/h2-console",
-            "/shoes", "/t-shirt", "/trousers", "/cap", "/dress", "/shorts", "/socks", "/hoodie", "/jacket", "/shirt", "/skirt"};
+    public static String[] publicEndPoints = {"/","/login","/registration","/item/**","/h2-console","/h2-console/**",
+           "/shoes", "/t-shirt", "/trousers", "/cap", "/dress", "/shorts", "/socks", "/hoodie", "/jacket", "/shirt", "/skirt"};
+
+    public static String[] privateEndPoints={"/user"};
 
 
     @Bean
@@ -34,10 +41,10 @@ public class ApplicationSecurityConfig      {
 
         http.authorizeHttpRequests((auth)->{
             auth
-                    .requestMatchers(publicEndPoints)
-                    .permitAll()
+                    .requestMatchers(privateEndPoints)
+                    .authenticated()
                     .anyRequest()
-                    .authenticated();
+                    .permitAll();
 
 
 
@@ -67,6 +74,7 @@ public class ApplicationSecurityConfig      {
     public AuthenticationManager authenticationManager (AuthenticationConfiguration authenticationConfiguration) throws Exception{
         return authenticationConfiguration.getAuthenticationManager();
     }
+
 
 
 

@@ -18,6 +18,7 @@ import {CategoryListComponent} from "../template/category-list/category-list.com
 import { ItemPageComponent } from '../item-page/item-page.component';
 import {RegistrationPageComponent} from "../registration-page/registration-page.component";
 import {FormsModule} from "@angular/forms";
+import {LoginPageComponent} from "../login-page/login-page.component";
 
 
 
@@ -34,7 +35,8 @@ import {FormsModule} from "@angular/forms";
     CategoryComponent,
     CategoryListComponent,
     ItemPageComponent,
-    RegistrationPageComponent
+    RegistrationPageComponent,
+    LoginPageComponent
 
   ],
   imports: [

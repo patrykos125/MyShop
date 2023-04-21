@@ -15,7 +15,7 @@
             <div class="collapse show" id="home-collapse">
               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small text-decoration-none" id="list">
                 <li><a href="/shoes" class="link-dark rounded text-decoration-none">Shoes</a></li>
-                <li><a href="/t_shirt" class="link-dark rounded text-decoration-none">T_shirt</a></li>
+                <li><a href="/t_shirt" class="link-dark rounded text-decoration-none">T-shirt</a></li>
                 <li><a href="/trousers" class="link-dark rounded text-decoration-none">Trousers</a></li>
                 <li><a href="/cap" class="link-dark rounded text-decoration-none">Cap</a></li>
                 <li><a href="/dress" class="link-dark rounded text-decoration-none">Dress</a></li>
@@ -28,32 +28,20 @@
               </ul>
             </div>
           </li>
-          <!--          <li class="mb-1">-->
-          <!--            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">-->
-          <!--              Example-->
-          <!--            </button>-->
-          <!--            <div class="collapse" id="dashboard-collapse" style="">-->
-          <!--              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">-->
-          <!--                <li><a href="#" class="link-dark rounded">Overview</a></li>-->
-          <!--                <li><a href="#" class="link-dark rounded">Weekly</a></li>-->
-          <!--                <li><a href="#" class="link-dark rounded">Monthly</a></li>-->
-          <!--                <li><a href="#" class="link-dark rounded">Annually</a></li>-->
-          <!--              </ul>-->
-          <!--            </div>-->
-          <!--          </li>-->
-          <li class="mb-1">
-            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-              Orders
-            </button>
-            <div class="collapse" id="orders-collapse">
-              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li><a href="#" class="link-dark rounded">New</a></li>
-                <li><a href="#" class="link-dark rounded">Processed</a></li>
-                <li><a href="#" class="link-dark rounded">Shipped</a></li>
-                <li><a href="#" class="link-dark rounded">Returned</a></li>
-              </ul>
-            </div>
-          </li>
+
+<!--          <li class="mb-1">-->
+<!--            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">-->
+<!--              Orders-->
+<!--            </button>-->
+<!--            <div class="collapse" id="orders-collapse">-->
+<!--              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">-->
+<!--                <li><a href="#" class="link-dark rounded">New</a></li>-->
+<!--                <li><a href="#" class="link-dark rounded">Processed</a></li>-->
+<!--                <li><a href="#" class="link-dark rounded">Shipped</a></li>-->
+<!--                <li><a href="#" class="link-dark rounded">Returned</a></li>-->
+<!--              </ul>-->
+<!--            </div>-->
+<!--          </li>-->
           <li class="border-top my-3"></li>
           <li class="mb-1">
             <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
@@ -61,49 +49,20 @@
             </button>
             <div class="collapse" id="account-collapse">
               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li><a href="#" class="link-dark rounded">New...</a></li>
-                <li><a href="#" class="link-dark rounded">Profile</a></li>
-                <li><a href="#" class="link-dark rounded">Sign in</a></li>
+                <li>
+                  <a href="/login" class="btn  btn-primary">
+                    <div class="link-dark rounded">
+                     login
+                    </div>
+                  </a>
+                </li>
+
               </ul>
             </div>
           </li>
         </ul>
       </div>
-      <!--      <h1>KATEGORIA</h1>-->
-      <!--      <div class="col mb-5" *ngFor="let item of items">-->
 
-      <!--        &lt;!&ndash; singe item&ndash;&gt;-->
-      <!--        <div class="card h-100">-->
-      <!--          &lt;!&ndash; Sale badge&ndash;&gt;-->
-      <!--          <div  class="badge bg-dark text-white position-absolute" *ngIf="item.sale" style="top: 0.5rem; right: 0.5rem">Sale</div>-->
-      <!--          &lt;!&ndash; Product image&ndash;&gt;-->
-      <!--          <img class="card-img-top" [src]="item.imgUrl" alt="" />-->
-      <!--          &lt;!&ndash; Product details&ndash;&gt;-->
-      <!--          <div class="card-body p-4">-->
-      <!--            <div class="text-center">-->
-      <!--              &lt;!&ndash; Product name&ndash;&gt;-->
-      <!--              <h5 class="fw-bolder">{{item.shortDescription}}</h5>-->
-      <!--              &lt;!&ndash; Product reviews&ndash;&gt;-->
-      <!--              <div class="d-flex justify-content-center small text-warning mb-2">-->
-      <!--                <div class="bi-star-fill"></div>-->
-      <!--                <div class="bi-star-fill"></div>-->
-      <!--                <div class="bi-star-fill"></div>-->
-      <!--                <div class="bi-star-fill"></div>-->
-      <!--                <div class="bi-star-fill"></div>-->
-      <!--              </div>-->
-      <!--              &lt;!&ndash; Product price&ndash;&gt;-->
-      <!--              <span class="text-muted text-decoration-line-through" *ngIf="item.sale">{{item.oldPrice}} zł</span>-->
-      <!--              {{item.price}}zł-->
-      <!--            </div>-->
-      <!--          </div>-->
-      <!--          &lt;!&ndash; Product actions&ndash;&gt;-->
-      <!--          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">-->
-      <!--            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>-->
-      <!--          </div>-->
-      <!--        </div>-->
-
-      <!--      </div>-->
-      <!--    </div>-->
     </div>
   </div>
 </section>

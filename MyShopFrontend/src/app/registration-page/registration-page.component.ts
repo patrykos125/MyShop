@@ -15,10 +15,11 @@ export class RegistrationPageComponent implements OnInit{
 
   ngOnInit(): void {
     this.lockCompanyField();
-    
+
   }
   public onSubmit(data:any){
     this.http.post('http://localhost:8080/registration',data).subscribe((response)=>{
+
 
     })
 
