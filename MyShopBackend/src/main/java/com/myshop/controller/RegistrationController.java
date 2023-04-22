@@ -23,7 +23,7 @@ public class RegistrationController {
 
     @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/registration")
-    public ResponseEntity<String> create(@RequestBody User newUser){
+    public ResponseEntity<HttpStatus> create(@RequestBody User newUser){
         User saved;
          if (newUser == null) { throw new IllegalArgumentException("New user must be not null");
 
@@ -34,15 +34,9 @@ public class RegistrationController {
              saved = userRepository.save(newUser);
              System.out.println(saved + " was added to database");
 
-             return new ResponseEntity<>(saved.getSession().getSessionKey(), HttpStatus.CREATED);
+             return new ResponseEntity<>( HttpStatus.CREATED);
          }
-         return  new ResponseEntity<>("",HttpStatus.CONFLICT);
-
-
-
-
-
-
+         return  new ResponseEntity<>(HttpStatus.CONFLICT);
 
     }
 }

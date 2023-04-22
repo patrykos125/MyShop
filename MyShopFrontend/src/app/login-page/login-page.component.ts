@@ -27,12 +27,7 @@ export class LoginPageComponent {
 
   }
 
-
-
-
   public onSubmit(user:UserLoginDto){
-
- console.log(user)
 
     this.http.post<HttpResponse<SessionDto>>('http://localhost:8080/login',user)
       .pipe(
@@ -46,8 +41,6 @@ export class LoginPageComponent {
         })
       )
       .subscribe((response)=>{
-
-
 
       if (response){
         this.sessionKey =response.body?.sessionKey

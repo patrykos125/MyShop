@@ -25,7 +25,7 @@ export class User{
         email: string,
         company: boolean,
         zipCode: string,
-        nip?: number, 
+        nip?: number,
         archiveOrders?: Order[],
         activeOrders?: Order[]){
 
@@ -43,5 +43,5 @@ export class User{
         this.archiveOrders = archiveOrders;
         this.activeOrders = activeOrders;
     }
-    
+
 }
