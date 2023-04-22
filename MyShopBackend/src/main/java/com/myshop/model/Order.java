@@ -10,7 +10,9 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Order {
-    private int id;
+    private long orderId;
+    private long userId;
+
     private LocalDate date;
     private Item[] items;
     private String status;

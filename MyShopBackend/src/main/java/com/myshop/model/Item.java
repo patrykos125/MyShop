@@ -14,11 +14,13 @@ import java.io.Serializable;
 @AllArgsConstructor
 public class Item implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-   private long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+   private long itemId;
    private String  shortDescription;
    private String longDescription;
+   @Enumerated(EnumType.STRING)
    private Size size;
+   @Enumerated(EnumType.STRING)
    private Category category;
    private double price;
    private String imgUrl;

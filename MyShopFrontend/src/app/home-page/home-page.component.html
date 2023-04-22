@@ -6,6 +6,7 @@
         <div class="col mb-2">
           <app-category-list></app-category-list>
         </div>
+
       </div>
       <div class="col-10">
         <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4">
@@ -42,9 +43,11 @@
                                                                         (click)="addItem(item.id)">Add to cart</a></div>
                 <div *ngIf="checkItem(item.id)" class="text-center"><a class="btn btn-outline-dark mt-auto" (click)="removeItem(item.id)">Remove from cart</a></div>
               </div>
+
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </div>

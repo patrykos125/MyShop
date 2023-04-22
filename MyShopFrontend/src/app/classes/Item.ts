@@ -3,7 +3,7 @@ import {Category} from "./enums/Category";
 
 export class Item {
 
-  public id:number;
+  public itemId:number;
   public shortDescription:string;
   public longDescription:string;
   public price:number;
@@ -14,8 +14,8 @@ export class Item {
   public  sale:boolean;
 
 
-  constructor(id: number, shortDescription: string, longDescription: string, price: number, imgUrl: string, size: Size, category: Category, oldPrice: number, sale: boolean) {
-    this.id = id;
+  constructor(itemId: number, shortDescription: string, longDescription: string, price: number, imgUrl: string, size: Size, category: Category, oldPrice: number, sale: boolean) {
+    this.itemId = itemId;
     this.shortDescription = shortDescription;
     this.longDescription = longDescription;
     this.price = price;

@@ -21,6 +21,6 @@ public class ItemController {
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("item/{id}")
     ResponseEntity<Item> item(@PathVariable("id") Long id ){
-        return new ResponseEntity<>( itemRepository.findItemById(id), HttpStatus.OK);
+        return new ResponseEntity<>( itemRepository.findItemByItemId(id), HttpStatus.OK);
     }
 }

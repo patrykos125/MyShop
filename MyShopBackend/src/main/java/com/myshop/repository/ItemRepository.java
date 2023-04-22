@@ -9,7 +9,7 @@ import java.util.List;
 public interface ItemRepository extends JpaRepository<Item,Long> {
 
     List<Item> findAllByCategory(Category category);
-    Item findItemById(Long id);
+    Item findItemByItemId(Long id);
 
 
 }
