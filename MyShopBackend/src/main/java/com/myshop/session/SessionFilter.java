@@ -7,6 +7,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
@@ -35,11 +36,14 @@ public class SessionFilter extends OncePerRequestFilter {
             String sessionKey = request.getHeader(HttpHeaders.AUTHORIZATION);
 
             if(sessionKey == null ||sessionKey.length()==0){
+
+
                 filterChain.doFilter(request,response);
             }
             String email = sessionRegistry.getEmailForSession(sessionKey);
 
             if(email == null){
+
                 filterChain.doFilter(request,response);
 
             }
