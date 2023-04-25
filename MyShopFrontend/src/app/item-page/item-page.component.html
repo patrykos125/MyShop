@@ -2,15 +2,15 @@
 <div class="container mt-4">
     <div class="row">
       <div class="col-md-6">
-        <img [src]="ThisItem?.imgUrl" alt="" class="card-img-top">
+        <img [src]="ThisItem.imgUrl" alt="" class="card-img-top">
       </div>
       <div class="col-md-6 shadow-lg p-3 mb-5 bg-white rounded">
-        <h2 class="mb-4 text-center">{{ThisItem?.shortDescription}}</h2>
-        <p class="lead mb-4">{{ThisItem?.longDescription}}</p>
+        <h2 class="mb-4 text-center">{{ThisItem.shortDescription}}</h2>
+        <p class="lead mb-4">{{ThisItem.longDescription}}</p>
         <h5 class="mb-3">Item Details:</h5>
         <ul class="list-group list-group-flush mb-4">
-          <li class="list-group-item">Category: {{ThisItem?.category}}</li>
-          <li class="list-group-item">Size: {{ThisItem?.size}}</li>
+          <li class="list-group-item">Category: {{ThisItem.category}}</li>
+          <li class="list-group-item">Size: {{ThisItem.size}}</li>
         </ul>
         <h5 class="mb-3 text-center">Rating</h5>
         <div class="d-flex justify-content-center small mb-2">
@@ -22,12 +22,12 @@
         <h5 class="mb-3 text-center mt-3">Price</h5>
         <div class="justify-content-center text-center">
         <div  class="badge bg-dark text-white m-1" *ngIf="ThisItem?.sale" style="top: 0.5rem; right: 0.5rem">Sale</div>
-        <span class="text-muted text-decoration-line-through" *ngIf="ThisItem?.sale">{{ThisItem?.oldPrice}} zł</span>
-        <div class="text-center pb-5">{{ThisItem?.price}}zł</div>
+        <span class="text-muted text-decoration-line-through" *ngIf="ThisItem?.sale">{{ThisItem.oldPrice}} zł</span>
+        <div class="text-center pb-5">{{ThisItem.price}}zł</div>
        </div>
        <div class="card-footer p-3 p-sm-4 pt-0 border-top-0 bg-transparent">
-        <div *ngIf="!checkItem(ThisItem!.itemId)" class="text-center"><a class="btn btn-outline-dark mt-auto" (click)="addItem(ThisItem!.itemId)">Add to cart</a></div>
-        <div *ngIf="checkItem(ThisItem!.itemId)" class="text-center"><a class="btn btn-outline-dark mt-auto" (click)="removeItem(ThisItem!.itemId)">Remove from cart</a></div>
+        <div *ngIf="!checkItem(ThisItem.itemId)" class="text-center"><a class="btn btn-outline-dark mt-auto" (click)="addItem(ThisItem!.itemId)">Add to cart</a></div>
+        <div *ngIf="checkItem(ThisItem.itemId)" class="text-center"><a class="btn btn-outline-dark mt-auto" (click)="removeItem(ThisItem!.itemId)">Remove from cart</a></div>
       </div>
       </div>
     </div>

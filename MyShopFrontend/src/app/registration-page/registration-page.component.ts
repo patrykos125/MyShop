@@ -31,7 +31,6 @@ export class RegistrationPageComponent implements OnInit{
   registerButtonText: string = "Zarejestruj się";
 
 
-
   constructor(private http:HttpClient, private router:Router) {
   }
 
@@ -135,7 +134,7 @@ export class RegistrationPageComponent implements OnInit{
     this.emailAlert="";
     const emailAlertControl = new FormControl(user.email, [
       Validators.required,
-      Validators.email
+      Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}")
     ]);
     if(emailAlertControl.invalid){
       this.emailAlert="Nie prawidłowy adres email"

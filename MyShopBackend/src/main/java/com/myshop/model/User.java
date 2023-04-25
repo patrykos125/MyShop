@@ -9,6 +9,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Collection;
 
 @Data
@@ -35,7 +36,9 @@ public class User implements  UserDetails ,Serializable {
     private String email;
     private boolean company;
     private String nip;
-    @OneToOne(cascade = CascadeType.ALL)
+    private LocalDate creationDate;
+    private LocalDate lastLogin;
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "sessionId",referencedColumnName = "sessionId")
     private Session session;
 
@@ -67,5 +70,6 @@ public class User implements  UserDetails ,Serializable {
 
 //    private Order[] archiveOrders;
 //    private Order[] activeOrders;
+
 
 }

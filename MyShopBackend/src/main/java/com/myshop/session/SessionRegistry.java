@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
 import java.util.UUID;
 @Component
 @AllArgsConstructor
@@ -30,8 +31,11 @@ public class SessionRegistry {
 
         User user = userRepository.findUserByEmail(email);
         user.setSession(session);
+        user.setLastLogin(LocalDate.now());
+        userRepository.save(user);
 
         return sessionKey;
+
 
     }
     public String getEmailForSession(final String sessionKey){

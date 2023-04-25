@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.time.LocalDate;
+
 @Controller
 @AllArgsConstructor
 public class RegistrationController {
@@ -29,6 +31,7 @@ public class RegistrationController {
 
         } else if (userRepository.findUserByEmail(newUser.getEmail()) == null) {
              newUser.setPassword(passwordEncoder.encode(newUser.getPassword()));
+             newUser.setCreationDate(LocalDate.now());
              String sessionKey = sessionRegistry.generateSessionKey();
              newUser.setSession(new Session(sessionKey));
              saved = userRepository.save(newUser);

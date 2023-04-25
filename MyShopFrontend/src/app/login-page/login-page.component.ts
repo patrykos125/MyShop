@@ -5,6 +5,7 @@ import {Router} from "@angular/router";
 import {catchError, throwError} from "rxjs";
 import {UserLoginDto} from "../classes/UserLoginDto";
 import {FormControl, Validators} from "@angular/forms";
+import { UserService } from '../service/user.service';
 
 @Component({
   selector: 'app-login-page',
@@ -18,7 +19,7 @@ export class LoginPageComponent {
 
 
 
-  constructor(private http:HttpClient ,private  router:Router   ) {
+  constructor(private http:HttpClient ,private  router:Router, private userService:UserService) {
 
   }
 
@@ -43,13 +44,16 @@ export class LoginPageComponent {
       .subscribe((response)=>{
 
       if (response){
-        this.sessionKey =response.body?.sessionKey
-
+      //  this.sessionKey =response.body?.sessionKey
+      let SessionJson = JSON.parse(JSON.stringify(response));
+      this.sessionKey = SessionJson['sessionKey'];
+     
         if (typeof this.sessionKey === "string") {
           sessionStorage.setItem(
             'token',
             this.sessionKey
           );
+          this.userService.isLogged = true;
         }
 
         this.router.navigate(['/']);

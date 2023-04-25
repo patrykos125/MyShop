@@ -46,10 +46,10 @@
                 <div class="minus btn btn-outline-dark mt-auto" (click)="item.decreaseamount()">-</div>
                 <div class="amountNumber btn btn-outline-dark mt-auto ">{{item.amount}}</div>
                 <div class="plus btn btn-outline-dark mt-auto" (click)="item.increaseAmount()">+</div>
-                <img src="assets/img/icon/trash-can.png" (click)="basket.romeveItem(indexOfelement)" class="trash-icon"
+                <img src="assets/img/icon/trash-can.png" (click)="RemoveItem(item.itemId, indexOfelement)" class="trash-icon"
                      alt="">
               </div>
-              <div class="sum"><h2>{{item.getSum() |number :'.2-2'}} zł</h2></div>
+              <div class="sum text-center"><h2>{{item.getSum() |number :'.2-2'}} zł</h2></div>
               <!--            <img src="assets/img/icon/trash-can.png" (click)="RemoveItem(item.id, indexOfelement)" class="trash-icon" alt="">-->
               <!--            <div class="amount">-->
               <!--        <div class="minus  btn " (click)="item.decreaseamount()" >-</div>-->

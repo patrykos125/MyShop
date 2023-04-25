@@ -50,11 +50,20 @@
             <div class="collapse" id="account-collapse">
               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                 <li>
-                  <a href="/login" class="btn  btn-primary">
-                    <div class="link-dark rounded">
-                     login
-                    </div>
-                  </a>
+                  <div *ngIf="!isLogged()">
+                    <a href="/login" class="btn  btn-primary">
+                      <div class="link-dark rounded">
+                       login
+                      </div>
+                    </a>
+                  </div>
+                  <div *ngIf="isLogged()">
+                    <a (click)="logout()" class="btn  btn-primary">
+                      <div class="link-dark rounded">
+                       logout
+                      </div>
+                      </a>
+                  </div>
                 </li>
 
               </ul>

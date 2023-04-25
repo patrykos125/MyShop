@@ -20,7 +20,17 @@ import { BasketService } from '../service/basket.service';
   ]
 })
 export class ItemPageComponent implements OnInit {
-  public ThisItem: Item | undefined;
+  public ThisItem: Item = {
+    itemId: 0,
+    shortDescription: '',
+    longDescription: '',
+    price: 0,
+    imgUrl: '',
+    size: 0,
+    category: 0,
+    oldPrice: 0,
+    sale: false,
+  };
   constructor(private itemService: ItemService, private route: ActivatedRoute, private router: Router, private basketService: BasketService) {
 
   }
