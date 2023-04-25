@@ -43,6 +43,16 @@
                                                                         (click)="addItem(item.itemId)">Add to cart</a></div>
                 <div *ngIf="checkItem(item.itemId)" class="text-center"><a class="btn btn-outline-dark mt-auto" (click)="removeItem(item.itemId)">Remove from cart</a></div>
               </div>
+              <div class="card-footer  p-sm-4 pt-0 border-top-0 bg-transparent text-center">
+
+                  <a class="btn btn-outline-dark mt-auto text-center">
+                  <a class="nav-link active text-center" aria-current="page" href="#!">
+                  <img src="assets/img/icon/heart.png" class="icon" alt="favourite">
+                </a>
+                </a>
+
+             </div>
+
 
             </div>
           </div>
