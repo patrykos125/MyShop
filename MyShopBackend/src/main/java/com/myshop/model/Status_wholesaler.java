@@ -14,8 +14,7 @@ public class Status_wholesaler {
 
     private String wholesaler;
 
-    @OneToMany
-    @JoinColumn(name = "statusWholesaler_id")
+    @OneToMany(mappedBy = "wholesaler")
     private List<Item> items = new ArrayList<>();
 
     private LocalDate deliverTime;
