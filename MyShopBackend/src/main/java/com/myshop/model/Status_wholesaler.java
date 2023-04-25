@@ -1,11 +1,10 @@
 package com.myshop.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Status_wholesaler {
@@ -14,6 +13,10 @@ public class Status_wholesaler {
     private Long id;
 
     private String wholesaler;
+
+    @OneToMany
+    @JoinColumn(name = "statusWholesaler_id")
+    private List<Item> items = new ArrayList<>();
 
     private LocalDate deliverTime;
 

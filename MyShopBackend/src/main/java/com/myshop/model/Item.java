@@ -16,8 +16,7 @@ public class Item implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
    private long id;
 
-    @OneToOne
-    private Status_wholesaler wholesaler;
+
    private String  shortDescription;
    private String longDescription;
    private String size;
