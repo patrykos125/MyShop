@@ -1,6 +1,6 @@
 import {ItemInBasket} from "./ItemInBasket";
-import {Size} from "./enums/Size";
-import {Category} from "./enums/Category";
+
+
 import { Item } from "./Item";
 
 

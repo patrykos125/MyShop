@@ -1,7 +1,6 @@
 package com.myshop.model;
 
 import com.myshop.model.enums.Category;
-import com.myshop.model.enums.Size;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,8 +17,7 @@ public class Item implements Serializable {
    private long itemId;
    private String  shortDescription;
    private String longDescription;
-   @Enumerated(EnumType.STRING)
-   private Size size;
+   private String size;
    @Enumerated(EnumType.STRING)
    private Category category;
    private double price;

@@ -30,6 +30,7 @@ public class User implements  UserDetails ,Serializable {
     private String zipCode;
     private String city;
     private String street;
+    private String houseNumber;
     private String apartmentNumber;
     private String surname;
     private String phoneNumber;

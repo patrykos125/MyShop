@@ -21,7 +21,7 @@ export class RegistrationPageComponent implements OnInit{
   zipCodeAlert: string = "";
   cityAlert: string = "";
   streetAlert: string = "";
-  apartmentNumberAlert: string = "";
+  houseNumberAlert: string = "";
   phoneNumberAlert: string = "";
   emailAlert: string = "";
   nipAlert: string = "";
@@ -113,13 +113,13 @@ export class RegistrationPageComponent implements OnInit{
       this.streetAlert="Pole ulica musi zawierać co najmiej 2 znaki"
     }
     //
-    this.apartmentNumberAlert="";
-    const apartmentNumberControl = new FormControl(user.apartmentNumber, [
+    this.houseNumberAlert="";
+    const houseNumberControl = new FormControl(user.houseNumber, [
       Validators.required,
       Validators.minLength(1)
     ]);
-    if(apartmentNumberControl.invalid){
-      this.apartmentNumberAlert="Pole numer mieszkania nie może być puste "
+    if(houseNumberControl.invalid){
+      this.houseNumberAlert="Pole numer doumu nie może być puste "
     }
     //
     this.phoneNumberAlert="";
@@ -175,7 +175,7 @@ export class RegistrationPageComponent implements OnInit{
       zipCodeControl.valid &&
       cityControl.valid &&
       streetControl.valid &&
-      apartmentNumberControl.valid &&
+      houseNumberControl.valid &&
       phoneNumberControl.valid &&
       emailAlertControl.valid &&
        nipControl.valid &&

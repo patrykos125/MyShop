@@ -26,7 +26,7 @@ export class ItemPageComponent implements OnInit {
     longDescription: '',
     price: 0,
     imgUrl: '',
-    size: 0,
+    size: '',
     category: 0,
     oldPrice: 0,
     sale: false,

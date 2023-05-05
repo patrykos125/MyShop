@@ -1,4 +1,4 @@
-import {Size} from "./enums/Size";
+
 import {Category} from "./enums/Category";
 
 export class Item {
@@ -8,13 +8,13 @@ export class Item {
   public longDescription:string;
   public price:number;
   public imgUrl:string;
-  public size:Size;
+  public size:string;
   public category:Category;
   public  oldPrice:number;
   public  sale:boolean;
 
 
-  constructor(itemId: number, shortDescription: string, longDescription: string, price: number, imgUrl: string, size: Size, category: Category, oldPrice: number, sale: boolean) {
+  constructor(itemId: number, shortDescription: string, longDescription: string, price: number, imgUrl: string, size: string, category: Category, oldPrice: number, sale: boolean) {
     this.itemId = itemId;
     this.shortDescription = shortDescription;
     this.longDescription = longDescription;
