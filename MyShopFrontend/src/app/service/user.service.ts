@@ -42,6 +42,17 @@ export class UserService{
     };
     return this.http.get<User>(userUrl, httpOptions);
    }
+   
+   getUserID(): Observable<number> {
+    const userUrl = "http://localhost:8080/user/id";
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': `${sessionStorage.getItem('token')}`
+      })
+    };
+    return this.http.get<number>(userUrl, httpOptions);
+  }
 
    canActivate(state: RouterStateSnapshot): Observable<boolean> {
     const url: any = state.url[0];

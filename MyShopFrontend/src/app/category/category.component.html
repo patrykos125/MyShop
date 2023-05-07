@@ -26,11 +26,9 @@
                   <h5 class="fw-bolder">{{item.shortDescription}}</h5>
                   <!-- Product reviews-->
                   <div routerLink="/item/{{ item.itemId }}" class="d-flex justify-content-center small mb-2">
-                    <div class="bi-star-fill text-warning"></div>
-                    <div class="bi-star-fill text-warning"></div>
-                    <div class="bi-star-fill text-warning"></div>
-                    <div class="bi-star-fill"></div>
-                    <div class="bi-star-fill"></div>
+                    <span class="star" *ngFor="let star of [1, 2, 3, 4, 5]" [class.full]="star <= countStars(item.comments)" [class.empty]="star > countStars(item.comments)">
+                      <div [class.bi-star-fill]="true" [class.text-warning]="star <= countStars(item.comments)"></div>
+                    </span>
                   </div>
                   <!-- Product price-->
                   <span class="text-muted text-decoration-line-through" *ngIf="item.sale">{{item.oldPrice}} zł</span>

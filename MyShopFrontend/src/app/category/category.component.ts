@@ -3,6 +3,7 @@ import {Item} from "../classes/Item";
 import {ItemService} from "../service/item.service";
 import {ActivatedRoute} from "@angular/router";
 import { BasketService } from '../service/basket.service';
+import { CommentItem } from '../classes/Comment';
 
 @Component({
   selector: 'app-category',
@@ -40,6 +41,10 @@ export class CategoryComponent implements OnInit{
   
   public removeItem(itemID:number){
   this.basketService.removeItemFromBasket(itemID);
+  }
+  
+  public countStars(Comments: CommentItem[]): number{
+    return Comments.reduce((acc, comment) => acc + comment.rating, 0)/Comments.length;
   }
 
 }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -37,6 +38,13 @@ public class UserController {
 
 
         return userf;
+    }
+    @GetMapping("/user/id")
+    public Long userID(@RequestHeader("Authorization") String token){
+        if(sessionRepository.findSessionBySessionKey(token).isPresent()){
+            return sessionRepository.findSessionBySessionKey(token).get().getUser().getUserId();
+        }
+        return null;
     }
 
 

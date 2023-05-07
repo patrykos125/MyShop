@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ItemService} from "../service/item.service";
 import {Item} from "../classes/Item";
 import { BasketService } from '../service/basket.service';
+import { CommentItem } from '../classes/Comment';
 
 @Component({
   selector: 'app-home-page',
@@ -19,7 +20,7 @@ export class HomePageComponent implements OnInit{
 
      this.itemService.getAllItems().subscribe((response:Item[])=>{
        this.items=response;
-
+      console.log(this.items);
      })
   }
 
@@ -39,5 +40,8 @@ export class HomePageComponent implements OnInit{
   this.basketService.removeItemFromBasket(itemID);
   }
 
+  public countStars(Comments: CommentItem[]): number{
+    return Comments.reduce((acc, comment) => acc + comment.rating, 0)/Comments.length;
+  }
 
 }
