@@ -71,7 +71,7 @@
   
         <div *ngIf ="isLoggedOrCommentFromUserExist()" class="row">
           <div class="col-md-8">
-            <div class="d-flex  small mb-2">
+           <div class="d-flex  small mb-2">
               <span class="star" *ngFor="let star of [1, 2, 3, 4, 5]" [class.full]="star <= yourComment.rating" [class.empty]="star > yourComment.rating || hoverValue < star" (mouseenter)="hoverValue = star" (mouseleave)="hoverValue = yourComment.rating" (click)="yourComment.rating = star">
                 <div [class.bi-star-fill]="true" [class.text-warning]="star <= hoverValue || star <= yourComment.rating"></div>
               </span>

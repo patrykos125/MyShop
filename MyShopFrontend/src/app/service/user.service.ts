@@ -32,6 +32,18 @@ export class UserService{
       }
   }
 
+  changePassword(oldPassword:string, newPassword: string):Observable<boolean>{
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `${sessionStorage.getItem('token')}`
+      })
+    };
+    const body = { oldPassword, newPassword };
+    return this.http.put<boolean>('http://localhost:8080/user/changePassword', body, httpOptions);
+  }
+
+
   getUser(): Observable<User> {
     const userUrl = "http://localhost:8080/user";
     const httpOptions = {

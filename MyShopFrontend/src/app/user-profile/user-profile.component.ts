@@ -2,12 +2,22 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../service/user.service';
 import  { User }  from '../classes/User';
+import { trigger, transition, style, animate } from '@angular/animations';
+import { FormControl, Validators } from '@angular/forms';
 
 
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
-  styleUrls: ['./user-profile.component.css']
+  styleUrls: ['./user-profile.component.css'],
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('650ms ease-in', style({ opacity: 1 }))
+      ])
+    ])
+  ]
 })
 export class UserProfileComponent implements OnInit {
   selectedOrder: any;
@@ -16,14 +26,18 @@ export class UserProfileComponent implements OnInit {
     firstName: '',
     surname: '',
     city: '',
-    address: '',
+    street: '',
+    houseNumber: '',
     apartmentNumber: '',
     phoneNumber: '',
     email: '',
     company: false,
     zipCode: '',
-    nip: 0
+    nip: 0,
+    creationDate: new Date(),
   };
+
+
 
   constructor(private userService: UserService){
 
@@ -44,7 +58,9 @@ export class UserProfileComponent implements OnInit {
   showComplaints: boolean = false;
   showExpandedOrder: boolean = false;
   ExpandedOrder: any;
-
+  activeLink: string = 'showPersonal';
+  passwordOldAlert: string = "";
+  passworNewAlert: string = "";
 
   getTotal(order: any) {
     let total = 0;
@@ -71,6 +87,7 @@ export class UserProfileComponent implements OnInit {
     this.showComplaints = false;
     this.showExpandedOrder = false;
     this[prop] = true;
+    this.activeLink = prop;
   }
 
   submitForm(oldPassword: string, newPassword: string) {
@@ -95,7 +112,44 @@ export class UserProfileComponent implements OnInit {
     dropdownButton.textContent = `ID: ${order.id} - ${order.date}`;
   }
 
+  logout(): any{
+    this.userService.logout();
+  }
+  validData(passwords: string){
+    let password = JSON.parse(JSON.stringify(passwords));
+    this.passwordOldAlert="";
+    const passwordoldControl = new FormControl(password['oldpass'], [
+      Validators.required,
+      Validators.minLength(8)
+    ]);
+    const passwordControl = new FormControl(password['newpass'], [
+      Validators.required,
+      Validators.minLength(8)
+    ]);
+    this.passworNewAlert="";
+    if(passwordControl.invalid){
+      this.passworNewAlert="Hasło musi zawierać co najmniej  8 znaków"
+    }
+    if(passwordoldControl.invalid){
+      this.passwordOldAlert="Hasło musi zawierać co najmniej  8 znaków"
+    }
+    if(password['oldpass'] === password['newpass']){
+      this.passworNewAlert="Hasła są takie same"
+    }
 
+    let passwordNotTheSame = password['oldpass'] != password['newpass'];
+
+    if(passwordControl.valid && passwordoldControl.valid && passwordNotTheSame){
+      this.userService.changePassword(password['oldpass'], password['newpass']).subscribe((response) =>{
+        if(response){
+          this.passworNewAlert = "Hasło zostało zmienione";
+        } else {
+          this.passwordOldAlert = "Błędne hasło"
+        }
+      })
+    }
+
+  }
 
 
 }

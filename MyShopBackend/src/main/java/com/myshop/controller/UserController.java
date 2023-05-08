@@ -5,10 +5,7 @@ import com.myshop.repository.SessionRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -16,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
     @Autowired
     SessionRepository sessionRepository;
+
 
     @GetMapping("/user")
     public User userPage(HttpServletRequest request){
@@ -35,7 +33,8 @@ public class UserController {
         userf.setCompany(user.isCompany());
         userf.setNip(user.getNip());
         userf.setZipCode(user.getZipCode());
-
+        userf.setHouseNumber(user.getHouseNumber());
+        userf.setCreationDate(user.getCreationDate());
 
         return userf;
     }

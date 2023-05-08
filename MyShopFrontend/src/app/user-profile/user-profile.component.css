@@ -52,3 +52,7 @@
 .collapse>ul>li {
   cursor: pointer;
 }
+
+.nav-link:hover {
+  cursor: pointer;
+}
