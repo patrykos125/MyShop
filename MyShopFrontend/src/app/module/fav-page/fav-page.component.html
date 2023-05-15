@@ -1,0 +1,62 @@
+
+<section class="py-5">
+  <div class="container px-4 px-lg-5 mt-5">
+
+    <div class="row ">
+
+      <div class="col-md-10 col-lg-2 ">
+
+        <div class="col mb-2">
+          <app-category-list></app-category-list>
+        </div>
+
+      </div>
+
+      <div>
+<!--        miejsce na pustą zakładke favourite-->
+        <!--        <div class="card p-2">-->
+        <!--          <aside>-->
+        <!--            <p class="text-center">Brak przedmiotów w ulubionych.</p>-->
+        <!--          </aside>-->
+        <!--        </div>-->
+      </div>
+
+      <div class="col-10"> <p>fav-page works!</p>
+        <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4">
+
+          <ng-template #itemsExist>
+
+            <div class="col-10">
+              <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 ">
+                <div class="col mb-5" *ngFor="let item of basket.getArray();let indexOfelement=index;">
+                  <!-- singe item-->
+                  <div class="card h-100">
+                    <!-- Product image-->
+                    <img class="card-img-top" [src]="item.imgUrl" alt=""/>
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                      <div class="text-center">
+
+                        <p>{{item.shortDescription}} </p>
+                      </div>
+                    </div>
+                    <!---Product action--->
+                    <div class="card-footer p-2  mt-2 pt-0 border-top-0 bg-transparent text-center">
+                      <img src="assets/img/icon/heart.png" (click)="RemoveItem(item.itemId, indexOfelement)" class="icon"
+                           alt="">
+                      <img src="assets/img/icon/trash-can.png" (click)="RemoveItem(item.itemId, indexOfelement)" class="icon"
+                           alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+</section>

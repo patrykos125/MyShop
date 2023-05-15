@@ -9,6 +9,7 @@ import { ItemPageComponent } from '../item-page/item-page.component';
 import {RegistrationPageComponent} from "../registration-page/registration-page.component";
 import {LoginPageComponent} from "../login-page/login-page.component";
 import { UserService } from '../service/user.service';
+import {FavPageComponent} from "./fav-page/fav-page.component";
 
 
 const routes:Routes=[
@@ -18,9 +19,11 @@ const routes:Routes=[
   {path:'basket',component:BasketComponent},
   {path:'user-profile', component: UserProfileComponent,  canActivate:[UserService]},
   {path: 'registration', component: RegistrationPageComponent },
+  {path: 'fav-page', component: FavPageComponent},
   {path: 'login', component: LoginPageComponent,  canActivate:[UserService] },
   {path:':category', component: CategoryComponent },
   {path: 'item/:id', component: ItemPageComponent }
+
 
 ]
 @NgModule({

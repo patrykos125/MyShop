@@ -19,6 +19,8 @@ import { ItemPageComponent } from '../item-page/item-page.component';
 import {RegistrationPageComponent} from "../registration-page/registration-page.component";
 import {FormsModule} from "@angular/forms";
 import {LoginPageComponent} from "../login-page/login-page.component";
+import { FavPageComponent } from './fav-page/fav-page.component';
+
 
 
 
@@ -36,7 +38,9 @@ import {LoginPageComponent} from "../login-page/login-page.component";
     CategoryListComponent,
     ItemPageComponent,
     RegistrationPageComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    FavPageComponent,
+
 
   ],
   imports: [

@@ -44,21 +44,22 @@
 <!--          </li>-->
           <li class="border-top my-3"></li>
           <li class="mb-1">
-            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+            <button class="btn btn-toggle align-items-center rounded collapsed " data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
               Account
             </button>
             <div class="collapse" id="account-collapse">
               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                 <li>
                   <div *ngIf="!isLogged()">
-                    <a href="/login" class="btn  btn-primary">
+<!--                    bg-primary-subtle-->
+                    <a href="/login" class="btn m-2 p-2 btn-block login form-control" type="submit">
                       <div class="link-dark rounded">
                        login
                       </div>
                     </a>
                   </div>
                   <div *ngIf="isLogged()">
-                    <a (click)="logout()" class="btn  btn-primary">
+                    <a (click)="logout()" class="btn m-2 p-2  btn-block login form-control " type="submit">
                       <div class="link-dark rounded">
                        logout
                       </div>
