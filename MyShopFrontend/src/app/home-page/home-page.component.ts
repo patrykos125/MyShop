@@ -21,7 +21,7 @@ export class HomePageComponent implements OnInit{
 
      this.itemService.getAllItems().subscribe((response:Item[])=>{
        this.items=response;
-      console.log(this.items);
+
      })
   }
 

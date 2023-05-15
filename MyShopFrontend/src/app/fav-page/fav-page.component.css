@@ -1,0 +1,13 @@
+.icon{
+  height: 30px;
+  width: 30px;
+
+}
+.zoomin{
+  transition: transform .5s ease;
+}
+
+.zoomin:hover{
+  cursor:pointer;
+  transform: scale(1.1);
+}

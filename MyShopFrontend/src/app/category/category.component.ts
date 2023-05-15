@@ -4,6 +4,7 @@ import {ItemService} from "../service/item.service";
 import {ActivatedRoute} from "@angular/router";
 import { BasketService } from '../service/basket.service';
 import { CommentItem } from '../classes/Comment';
+import {FavoriteService} from "../service/favorite.service";
 
 @Component({
   selector: 'app-category',
@@ -15,7 +16,7 @@ export class CategoryComponent implements OnInit{
   public items: Item[] | undefined;
   data: string | null ='';
 
-  constructor(private itemService: ItemService,private route: ActivatedRoute, private basketService: BasketService) {
+  constructor(private itemService: ItemService,private route: ActivatedRoute, private basketService: BasketService ,private favoriteService:FavoriteService) {
 
     this.data = this.route.snapshot.paramMap.get('category');
   }
@@ -34,17 +35,29 @@ export class CategoryComponent implements OnInit{
   public checkItem(itemID: number):boolean{
     return this.basketService.CheckCart(itemID);
   }
-  
+
   public addItem(itemID: number){
     this.basketService.addItemToBasket(itemID);
   }
-  
+
   public removeItem(itemID:number){
   this.basketService.removeItemFromBasket(itemID);
   }
-  
+
   public countStars(Comments: CommentItem[]): number{
     return Comments.reduce((acc, comment) => acc + comment.rating, 0)/Comments.length;
+  }
+  public checkFavorite(itemID :number){
+    return this.favoriteService.checkFavorite(itemID);
+
+  }
+  public  removeFromFavorite(itemID :number){
+    return this.favoriteService.deleteFromFavorite(itemID);
+
+
+  }
+  public addItemToFavorite(itemID :number){
+    return this.favoriteService.addItemToFavorite(itemID);
   }
 
 }
