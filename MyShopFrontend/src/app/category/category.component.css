@@ -1,3 +1,8 @@
+.icon{
+  height: 30px;
+  width: 30px;
+
+}
 .zoomin{
     transition: transform .5s ease;
 }
@@ -6,4 +11,3 @@
     cursor:pointer;
     transform: scale(1.1);
 }
-

@@ -30,7 +30,7 @@ public class UserService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         User user = userRepository.findUserByEmail(email);
-        if(user == null){
+        if(user == null ){
             throw new UsernameNotFoundException("Failed to find user with email: "+email);
                         }
 

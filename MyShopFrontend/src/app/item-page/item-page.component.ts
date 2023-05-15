@@ -57,14 +57,13 @@ export class ItemPageComponent implements OnInit {
     this.itemService.getItem(this.route.snapshot.params['id']).subscribe((item:Item)=> {
       if(item){
         this.ThisItem = item;
-      } else [
-        this.router.navigate(['/']),
-      ]
+      } else []
+
   })
   this.userService.getUserID().subscribe((response) =>{
     if(response) this.userID = response;
   })
-  
+
 }
 
 public checkItem(itemID: number):boolean{

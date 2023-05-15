@@ -9,7 +9,7 @@ import { ItemPageComponent } from '../item-page/item-page.component';
 import {RegistrationPageComponent} from "../registration-page/registration-page.component";
 import {LoginPageComponent} from "../login-page/login-page.component";
 import { UserService } from '../service/user.service';
-import {FavPageComponent} from "./fav-page/fav-page.component";
+import {FavPageComponent} from "../fav-page/fav-page.component";
 
 
 const routes:Routes=[
