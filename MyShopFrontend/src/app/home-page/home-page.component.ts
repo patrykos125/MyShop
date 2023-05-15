@@ -3,6 +3,7 @@ import {ItemService} from "../service/item.service";
 import {Item} from "../classes/Item";
 import { BasketService } from '../service/basket.service';
 import { CommentItem } from '../classes/Comment';
+import {FavoriteService} from "../service/favorite.service";
 
 @Component({
   selector: 'app-home-page',
@@ -13,7 +14,7 @@ export class HomePageComponent implements OnInit{
 
  public items: Item[] | undefined  ;
 
-  constructor(private itemService: ItemService, private basketService: BasketService) {
+  constructor(private itemService: ItemService, private basketService: BasketService, private favoriteService :FavoriteService) {
 
   }
   public getItems():void{
@@ -26,6 +27,17 @@ export class HomePageComponent implements OnInit{
 
   ngOnInit(): void {
     this.getItems()
+  }
+  public addItemToFavorite(itemID :number){
+    return this.favoriteService.addItemToFavorite(itemID);
+  }
+  public checkFavorite(itemID :number){
+    return this.favoriteService.checkFavorite(itemID);
+  }
+  public  removeFromFavorite(itemID :number){
+    return this.favoriteService.deleteFromFavorite(itemID);
+
+
   }
 
   public checkItem(itemID: number):boolean{
