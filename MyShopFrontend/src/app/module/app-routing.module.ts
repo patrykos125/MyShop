@@ -10,8 +10,8 @@ import {RegistrationPageComponent} from "../registration-page/registration-page.
 import {LoginPageComponent} from "../login-page/login-page.component";
 import { UserService } from '../service/user.service';
 import {FavPageComponent} from "../fav-page/fav-page.component";
-import {OrderComponent} from "./order/order.component";
-import {OrderDeliveryCheckComponent} from "./order-delivery-check/order-delivery-check.component";
+import {OrderComponent} from "../order/order.component";
+import {OrderDeliveryCheckComponent} from "../order-delivery-check/order-delivery-check.component";
 
 
 const routes:Routes=[

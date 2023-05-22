@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {OrderService} from "../../service/order.service";
-import {User} from "../../classes/User";
-import {Item} from "../../classes/Item";
-import {ItemService} from "../../service/item.service";
-import {Basket} from "../../classes/Basket";
+import {OrderService} from "../service/order.service";
+import {User} from "../classes/User";
+import {Item} from "../classes/Item";
+import {ItemService} from "../service/item.service";
+import {Basket} from "../classes/Basket";
 
 @Component({
   selector: 'app-order-delivery-check',

@@ -2,11 +2,11 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpStatusCode} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {catchError, throwError} from "rxjs";
-import {UserRegistrationDto} from "../../classes/UserRegistrationDto";
+import {UserRegistrationDto} from "../classes/UserRegistrationDto";
 import {FormControl, Validators} from "@angular/forms";
-import {UserService} from "../../service/user.service";
-import {User} from "../../classes/User";
-import {OrderService} from "../../service/order.service";
+import {UserService} from "../service/user.service";
+import {User} from "../classes/User";
+import {OrderService} from "../service/order.service";
 
 @Component({
   selector: 'app-order',
