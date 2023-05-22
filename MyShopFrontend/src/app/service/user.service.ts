@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable, map } from "rxjs";
 import { User } from "../classes/User";
 import { Router, RouterStateSnapshot } from "@angular/router";
+import { UserRegistrationDto } from "../classes/UserRegistrationDto";
 
 @Injectable({
     providedIn: 'root'
@@ -41,6 +42,16 @@ export class UserService{
     };
     const body = { oldPassword, newPassword };
     return this.http.put<boolean>('http://localhost:8080/user/changePassword', body, httpOptions);
+  }
+
+  changePersonalData(userData: UserRegistrationDto): Observable<boolean>{
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `${sessionStorage.getItem('token')}`
+      })
+    };
+    return this.http.put<boolean>('http://localhost:8080/user/changePersonalData', userData, httpOptions);
   }
 
 
