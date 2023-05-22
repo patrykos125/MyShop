@@ -8,7 +8,8 @@ export class OrderService {
   constructor() { }
 
   public setUserForOrder(data:any){
-    sessionStorage.setItem("userForOrder",data);
+    const stringifiedObject = JSON.stringify(data);
+    sessionStorage.setItem("userForOrder",stringifiedObject);
   }
 
   public setSelectedDeliveryType(id:number){
@@ -16,7 +17,15 @@ export class OrderService {
   }
 
   public getUserForOrder(){
-    return sessionStorage.getItem("userForOrder");
+    if(sessionStorage.getItem("userForOrder") != null){
+      const item = sessionStorage.getItem("userForOrder");
+      try{
+        if(item != null) {
+          return JSON.parse(item.toString());
+        }
+      }catch(NullPointerException){}
+    }
+      return "";
   }
 
   public getSelectedDeliveryType(){

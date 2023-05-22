@@ -57,17 +57,7 @@ export class OrderComponent implements OnInit{
 
   private setCurrentUser(){
     this.userService.getUser().subscribe(user => {
-      this.currentUser.firstName = user.firstName;
-      this.currentUser.surname = user.surname;
-      this.currentUser.nip = user.nip;
-      this.currentUser.company = user.company;
-      this.currentUser.city = user.city;
-      this.currentUser.zipCode = user.zipCode;
-      this.currentUser.email = user.email;
-      this.currentUser.apartmentNumber = user.apartmentNumber;
-      this.currentUser.houseNumber = user.houseNumber;
-      this.currentUser.street = user.street;
-      this.currentUser.phoneNumber = user.phoneNumber;
+      this.currentUser = user;
     });
   }
 
