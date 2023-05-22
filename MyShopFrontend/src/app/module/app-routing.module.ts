@@ -10,6 +10,8 @@ import {RegistrationPageComponent} from "../registration-page/registration-page.
 import {LoginPageComponent} from "../login-page/login-page.component";
 import { UserService } from '../service/user.service';
 import {FavPageComponent} from "../fav-page/fav-page.component";
+import {OrderComponent} from "./order/order.component";
+import {OrderDeliveryCheckComponent} from "./order-delivery-check/order-delivery-check.component";
 
 
 const routes:Routes=[
@@ -20,6 +22,8 @@ const routes:Routes=[
   {path:'user-profile', component: UserProfileComponent,  canActivate:[UserService]},
   {path: 'registration', component: RegistrationPageComponent },
   {path: 'fav-page', component: FavPageComponent},
+  {path: 'order', component: OrderComponent},
+  {path: 'order-delivery-check', component: OrderDeliveryCheckComponent},
   {path: 'login', component: LoginPageComponent,  canActivate:[UserService] },
   {path:':category', component: CategoryComponent },
   {path: 'item/:id', component: ItemPageComponent }
