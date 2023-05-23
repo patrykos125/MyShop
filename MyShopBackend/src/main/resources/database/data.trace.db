@@ -208,3 +208,7 @@ The connection was not closed by the application and is garbage collected [90018
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
 	... 91 more
+2023-05-23 17:58:37 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Błąd składniowy w wyrażeniu SQL "delete BUYED_ITEMS [*]from BUYED_ITEMS where 1!=1"
+Syntax error in SQL statement "delete BUYED_ITEMS [*]from BUYED_ITEMS where 1!=1"; SQL statement:
+delete BUYED_ITEMS from BUYED_ITEMS where 1!=1 [42000-214]

@@ -42,7 +42,7 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="input-imie">Imie</label>
-                          <input type="text" class="form-control" id="input-imie" name="firstName" placeholder="{{ currentUser.firstName }}" ngModel>
+                          <input type="text" class="form-control" id="input-imie" name="firstName" [(ngModel)]=" currentUser.firstName " ngModel>
                         </div>
                         <div  class="text-danger">
                           {{fistNameAlert}}
@@ -60,7 +60,7 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="input-miasto">Miasto</label>
-                          <input type="text" class="form-control" id="input-miasto" name="city" value="{{currentUser.city}}" ngModel>
+                          <input type="text" class="form-control" id="input-miasto" name="city" [(ngModel)]="currentUser.city" ngModel>
                         </div>
                         <div  class="text-danger">
                           {{cityAlert}}
@@ -69,7 +69,7 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="input-ulica">Ulica</label>
-                          <input type="text" class="form-control" id="input-ulica" name="street" placeholder="{{currentUser.street}}" ngModel>
+                          <input type="text" class="form-control" id="input-ulica" name="street" [(ngModel)]="currentUser.street" ngModel>
                         </div>
                         <div  class="text-danger">
                           {{streetAlert}}
@@ -77,8 +77,8 @@
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
-                          <label for="input-numer-mieszkania">Numer mieszkania</label>
-                          <input type="text" class="form-control" id="input-numer-domu" name="houseNumber" placeholder="{{currentUser.houseNumber}}" ngModel>
+                          <label for="input-numer-mieszkania">Numer domu</label>
+                          <input type="text" class="form-control" id="input-numer-domu" name="houseNumber" [(ngModel)]="currentUser.houseNumber" ngModel>
                         </div>
                         <div  class="text-danger">
                           {{houseNumberAlert}}
@@ -87,13 +87,13 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="input-numer-mieszkania">Numer mieszkania</label>
-                          <input type="text" class="form-control" id="input-numer-mieszkania" name="apartmentNumber" placeholder="{{currentUser.apartmentNumber}}" ngModel>
+                          <input type="text" class="form-control" id="input-numer-mieszkania" name="apartmentNumber" [(ngModel)]="currentUser.apartmentNumber" ngModel>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="input-kod-pocztowy">Kod pocztowy</label>
-                          <input type="text" class="form-control" id="input-kod-pocztowy" name="zipCode" placeholder="{{currentUser.zipCode}}" ngModel>
+                          <input type="text" class="form-control" id="input-kod-pocztowy" name="zipCode" [(ngModel)]="currentUser.zipCode" ngModel>
                         </div>
                         <div  class="text-danger">
                           {{zipCodeAlert}}
@@ -104,7 +104,7 @@
                           <div class="col-md-6">
                             <div class="form-group">
                               <label for="input-numer-mieszkania">NIP</label>
-                              <input type="text" class="form-control" id="input-nip" name="nip" placeholder="{{currentUser.nip}}" ngModel>
+                              <input type="text" class="form-control" id="input-nip" name="nip" [(ngModel)]="currentUser.nip" ngModel>
                             </div>
                             <div  class="text-danger">
                               {{nipAlert}}
@@ -143,7 +143,7 @@
                       </div>
                     </div>
                   </div>
-                  <button type="submit"class="btn btn-primary px-4 py-1 mb-3">Potwierdź</button>
+                  <button type="submit"class="btn btn-primary px-4 py-1 mb-3">Zmień</button>
                 </div>
              </form>
           </div>
