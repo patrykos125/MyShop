@@ -1,0 +1,45 @@
+<div class="row justify-content-center">
+  <div class="col-5 mt-3">
+    <div class="card">
+      <div class="card-header bg-primary text-white">
+        <h4 class="text-center">Przelew tradycyjny</h4>
+      </div>
+      <div class="card-body">
+
+        <span class="lh-lg"> Nazwa: <b> MyShop sp. z o.o. </b><br> </span>
+
+       <span class="lh-lg">  Adres: <b>Warszawa 00-902 ul. Wiejska 4 </b></span>
+
+      <span class="lh-lg"> <br>Tytuł przelewu: <b> {{payment_title}}</b></span>
+       <span class="lh-lg"> <br>Numer rachunku <b> PL 82 1020 5226 0000 6102 0417 7895</b></span>
+
+
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-5 mt-3">
+    <div class="card">
+      <div class="card-header bg-primary text-white">
+        <h4 class="text-center">Płatność online</h4>
+      </div>
+      <div class="card-body">
+        <span class="lh-lg">Blik <a href="https://www.blik.com/">zapłać blikiem</a></span> <br>
+        <span class="lh-lg">Paypal <a href="https://www.paypal.com/pl/home">zapłać z paypal</a></span>
+
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-3 mt-3 mb-3 d-flex justify-content-around">
+    <button class="btn btn-secondary me-md-2 btn-lg" type="button"><a class="text-decoration-none link-light" href="/order-delivery-check">Cofnij</a></button>
+    <button  class="btn btn-success me-md-2 btn-lg" type="button"><a class="text-decoration-none link-light" href="/" (click)="sendOrderToBackend() "  >Zapłaciłem</a></button>
+  </div>
+
+</div>

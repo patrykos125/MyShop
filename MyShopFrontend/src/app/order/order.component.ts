@@ -43,7 +43,7 @@ export class OrderComponent implements OnInit{
     email: '',
     company: false,
     zipCode: '',
-    nip: 0,
+    nip: '',
     creationDate: new Date(),
   };
 
@@ -57,7 +57,12 @@ export class OrderComponent implements OnInit{
 
   private setCurrentUser(){
     this.userService.getUser().subscribe(user => {
-      this.currentUser = user;
+      console.log(user);
+
+        this.currentUser = user;
+
+
+
     });
   }
 

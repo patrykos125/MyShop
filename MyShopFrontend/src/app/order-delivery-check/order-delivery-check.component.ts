@@ -26,7 +26,7 @@ export class OrderDeliveryCheckComponent implements OnInit{
     email: '',
     company: false,
     zipCode: '',
-    nip: 0,
+    nip: '',
     creationDate: new Date(),
   };
 

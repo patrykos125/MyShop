@@ -31,4 +31,5 @@ export class OrderService {
   public getSelectedDeliveryType(){
     return sessionStorage.getItem("selectedDeliveryType");
   }
+
 }

@@ -12,7 +12,7 @@ export class User{
     email: string;
     company: boolean;
     zipCode: string;
-    nip?: number;
+    nip?: string;
     archiveOrders?: Order[];
     activeOrders?: Order[];
     creationDate?: Date;
@@ -28,7 +28,7 @@ export class User{
         company: boolean,
         zipCode: string,
         apartmentnumber?: string,
-        nip?: number,
+        nip?: string,
         archiveOrders?: Order[],
         activeOrders?: Order[],
         creationDate?: Date,

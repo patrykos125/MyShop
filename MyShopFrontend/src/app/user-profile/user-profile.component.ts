@@ -34,7 +34,7 @@ export class UserProfileComponent implements OnInit {
     email: '',
     company: false,
     zipCode: '',
-    nip: 0,
+    nip: '',
     creationDate: new Date(),
   };
 
@@ -45,11 +45,11 @@ export class UserProfileComponent implements OnInit {
   }
   ngOnInit(): void {
     this.userService.getUser().subscribe(user => {
-      
+
       this.currentUser = user;
     });
   }
- 
+
   showPersonal: boolean = true;
   showPrivate: boolean = false;
   showChangePassword: boolean = false;
@@ -250,7 +250,7 @@ export class UserProfileComponent implements OnInit {
 
       const values = Object.values(data);
       const anyData = values.some(value => value !== "");
-    
+
       if (anyData) {
         this.userService.changePersonalData(data).subscribe((response)=>{
             if(response){

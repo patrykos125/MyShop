@@ -31,5 +31,19 @@ public class Item implements Serializable {
    @JsonManagedReference
    @OneToMany(mappedBy = "item")
    private List<CommentItem> comments = new ArrayList<>();
+
+   public Item(long itemId, String shortDescription, String longDescription, String size, Category category, double price, String imgUrl, double oldPrice, boolean sale) {
+      this.itemId = itemId;
+      this.shortDescription = shortDescription;
+      this.longDescription = longDescription;
+      this.size = size;
+      this.category = category;
+      this.price = price;
+      this.imgUrl = imgUrl;
+      this.oldPrice = oldPrice;
+      this.sale = sale;
+   }
+
+
 }
 

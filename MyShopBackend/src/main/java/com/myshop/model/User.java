@@ -10,7 +10,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -42,6 +44,10 @@ public class User implements  UserDetails ,Serializable {
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "sessionId",referencedColumnName = "sessionId")
     private Session session;
+    @OneToMany(mappedBy = "user")
+    private List<Order> orders = new ArrayList<>();
+
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -69,8 +75,7 @@ public class User implements  UserDetails ,Serializable {
         return true;
     }
 
-//    private Order[] archiveOrders;
-//    private Order[] activeOrders;
+
 
 
 }

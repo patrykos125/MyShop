@@ -12,6 +12,7 @@ import { UserService } from '../service/user.service';
 import {FavPageComponent} from "../fav-page/fav-page.component";
 import {OrderComponent} from "../order/order.component";
 import {OrderDeliveryCheckComponent} from "../order-delivery-check/order-delivery-check.component";
+import {OrderPaymentComponent} from "../order-payment/order-payment.component";
 
 
 const routes:Routes=[
@@ -24,6 +25,7 @@ const routes:Routes=[
   {path: 'fav-page', component: FavPageComponent},
   {path: 'order', component: OrderComponent},
   {path: 'order-delivery-check', component: OrderDeliveryCheckComponent},
+  {path: 'order-payment', component: OrderPaymentComponent},
   {path: 'login', component: LoginPageComponent,  canActivate:[UserService] },
   {path:':category', component: CategoryComponent },
   {path: 'item/:id', component: ItemPageComponent }
