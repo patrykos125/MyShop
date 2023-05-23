@@ -1,7 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 // @ts-ignore
 import { v4 as uuidv4 } from 'uuid';
-import {HttpClient, HttpResponse} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
+import { OrderService } from '../service/order.service';
+import { Basket } from '../classes/Basket';
+import { BasketService } from '../service/basket.service';
 
 
 
@@ -19,7 +22,7 @@ export class OrderPaymentComponent implements  OnInit{
 
   }
 
-  constructor(private http :HttpClient) {
+  constructor(private http :HttpClient, private orderService:OrderService, private basketService:BasketService) {
   }
 
   // clean basket after transaction
@@ -29,15 +32,13 @@ export class OrderPaymentComponent implements  OnInit{
 
   }
   public sendOrderToBackend(){
-    let storedIds = sessionStorage.getItem('basketIds');
-    let basketIds = storedIds ? JSON.parse(storedIds) : [];
-
-    //TODO help me
-
-
-
-
-
+    this.orderService.sendOrder(this.orderService.basket).subscribe((response)=>{
+        if(response){
+          this.cleanBasket();
+          this.orderService.basket = new Basket();
+          this.basketService.updateCart();
+        }
+    })
   }
 
 

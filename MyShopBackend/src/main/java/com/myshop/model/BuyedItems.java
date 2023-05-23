@@ -1,14 +1,11 @@
 package com.myshop.model;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.myshop.model.enums.Category;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Data
 @Entity
@@ -27,5 +24,12 @@ public class BuyedItems {
     private String imgUrl;
     private double oldPrice;
     private boolean sale;
+    private int amount;
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "order_id")
+    private Order order;
 
 }
+
+

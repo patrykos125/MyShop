@@ -4,6 +4,8 @@ import { Observable, map } from "rxjs";
 import { User } from "../classes/User";
 import { Router, RouterStateSnapshot } from "@angular/router";
 import { UserRegistrationDto } from "../classes/UserRegistrationDto";
+import { ItemInBasket } from "../classes/ItemInBasket";
+import { Order } from "../classes/Order";
 
 @Injectable({
     providedIn: 'root'
@@ -75,6 +77,16 @@ export class UserService{
       })
     };
     return this.http.get<number>(userUrl, httpOptions);
+  }
+
+  getUserOrders():Observable<Order[]>{
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': `${sessionStorage.getItem('token')}`
+      })
+    };
+    return this.http.get<Order[]>('http://localhost:8080/order/getOrders', httpOptions);
   }
 
    canActivate(state: RouterStateSnapshot): Observable<boolean> {

@@ -220,19 +220,21 @@
                 <th>ID</th>
                 <th>Produkty</th>
                 <th>Cena</th>
-              <th>Data</th>
+                <th>Data</th>
+                <th>Status</th>
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let order of currentUser.archiveOrders">
+                <tr *ngFor="let order of UserOrders">
                   <td>{{ order.id }}</td>
                   <td>
                     <ul class="list-unstyled">
-                      <li *ngFor="let item of order.items">{{ item.category }} - {{ item.price}} zł</li>
+                      <li *ngFor="let item of order.items">{{ item.category }} - {{ item.price}} zł - sztuki: {{ item.amount }} </li>
                     </ul>
                   </td>
                   <td>{{ getTotal(order) }} zł</td>
                   <td>{{ order.date }}</td>
+                  <td>{{ order.status }} </td>
                 </tr>
               </tbody>
             </table>

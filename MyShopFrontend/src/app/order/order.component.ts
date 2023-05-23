@@ -57,12 +57,7 @@ export class OrderComponent implements OnInit{
 
   private setCurrentUser(){
     this.userService.getUser().subscribe(user => {
-      console.log(user);
-
         this.currentUser = user;
-
-
-
     });
   }
 

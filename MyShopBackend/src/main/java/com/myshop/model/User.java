@@ -75,7 +75,15 @@ public class User implements  UserDetails ,Serializable {
         return true;
     }
 
-
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + userId +
+                ", email='" + email + '\'' +
+                // Exclude referencing the session field in the toString() method
+                // ", session=" + session +
+                '}';
+    }
 
 
 }

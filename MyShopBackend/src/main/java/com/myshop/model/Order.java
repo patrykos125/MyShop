@@ -1,5 +1,6 @@
 package com.myshop.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,11 +22,9 @@ public class Order {
     @JoinColumn(name = "client_id")
     private User user;
     private LocalDate date;
-    @OneToMany
-    @JoinColumn(name = "orders_id")
+    @JsonIgnore
+    @OneToMany(mappedBy = "order")
     private List<BuyedItems> items = new ArrayList<>();
     private String status;
-
-
 
 }

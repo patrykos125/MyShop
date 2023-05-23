@@ -3,6 +3,7 @@ import {Basket} from "../classes/Basket";
 import { BasketService } from '../service/basket.service';
 import { ItemService } from '../service/item.service';
 import { Item } from '../classes/Item';
+import { OrderService } from '../service/order.service';
 
 @Component({
   selector: 'app-basket',
@@ -15,7 +16,7 @@ export class BasketComponent implements OnInit{
   public matchingItems: Item[] | undefined;
   public items: Item[] | undefined;
 
-  constructor(private itemService: ItemService, private basketService:BasketService) {
+  constructor(private itemService: ItemService, private basketService:BasketService, private orderServie:OrderService) {
 
   }
 
@@ -44,6 +45,10 @@ export class BasketComponent implements OnInit{
     this.matchingItems?.forEach(item=>{
       this.basket.addItem(item);
     });
+  }
+
+  public getItemsFromBasket():void{
+    this.orderServie.basket = this.basket;
   }
 
 }

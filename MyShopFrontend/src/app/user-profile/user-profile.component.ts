@@ -5,6 +5,7 @@ import  { User }  from '../classes/User';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { FormControl, Validators } from '@angular/forms';
 import { UserRegistrationDto } from '../classes/UserRegistrationDto';
+import { Order } from '../classes/Order';
 
 
 @Component({
@@ -38,7 +39,7 @@ export class UserProfileComponent implements OnInit {
     creationDate: new Date(),
   };
 
-
+  UserOrders:Order[] = [];
 
   constructor(private userService: UserService){
 
@@ -75,7 +76,7 @@ export class UserProfileComponent implements OnInit {
   getTotal(order: any) {
     let total = 0;
     for (let item of order.items) {
-      total += item.price;
+      total += item.price * item.amount;
     }
     return total.toFixed(2);
   }
@@ -98,6 +99,13 @@ export class UserProfileComponent implements OnInit {
     this.showExpandedOrder = false;
     this[prop] = true;
     this.activeLink = prop;
+    if(prop == 'showOrderHistory'){
+      this.userService.getUserOrders().subscribe(response =>{
+        if(response){
+          this.UserOrders = response;
+        }
+      });
+    }
   }
 
   submitForm(oldPassword: string, newPassword: string) {
