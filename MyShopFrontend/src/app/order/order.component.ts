@@ -51,7 +51,7 @@ export class OrderComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.lockCompanyField();
+   // this.lockCompanyField();
     this.setCurrentUser();
   }
 
