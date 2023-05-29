@@ -29,6 +29,7 @@ export class OrderDeliveryCheckComponent implements OnInit{
     nip: '',
     creationDate: new Date(),
   };
+  selectedDeliveryOptions :string="";
 
   basket :Basket = new Basket();
   deliveryCost:number =19.99;
@@ -55,6 +56,10 @@ export class OrderDeliveryCheckComponent implements OnInit{
     this.matchingItems?.forEach(item=>{
       this.basket.addItem(item);
     });
+  }
+  public changeDeliveryCost(cost :number){
+    this.deliveryCost=cost;
+
   }
 
 }

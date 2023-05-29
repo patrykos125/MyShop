@@ -90,7 +90,7 @@
             <div class="form-group">
               <label for="nip">NIP:</label>
 
-              <input type="text" class="form-control" id="nip" name="nip" #nip [disabled]="!currentUser.company" ngModel="{{currentUser.nip}}" [ngClass]="{'border-danger':nipAlert.length!=0}">
+              <input type="text" class="form-control" id="nip" name="nip" #nip [disabled]="!currentUser.company"  ngModel="{{currentUser.nip}}" [ngClass]="{'border-danger':nipAlert.length!=0}">
 
             </div>
             <div  class="text-danger">

@@ -72,18 +72,18 @@
 <!--              <input type="email" class="form-control" id="email" name="email" ngModel="{{currentUser.email}}" disabled>-->
             </div>
 
-            <div class="form-group">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="companyCheck" name="company" #company ngModel="{{currentUser.company}}" disabled>
-                <label class="form-check-label" for="companyCheck">
-                  Firma
-                </label>
-              </div>
-            </div>
+<!--            <div class="form-group">-->
+<!--              <div class="form-check">-->
+<!--                <input class="form-check-input" type="checkbox" id="companyCheck" name="company" #company ngModel="{{currentUser.company}}" disabled >-->
+<!--                <label class="form-check-label" for="companyCheck">-->
+<!--                  Firma-->
+<!--                </label>-->
+<!--              </div>-->
+<!--            </div>-->
 
-            <div class="form-group">
+            <div class="form-group" *ngIf="currentUser.company">
               <label>NIP:</label>
-              <label id="nip">{{currentUser.nip}}</label>
+              <label id="nip" class="ms-1 fw-bold " >{{currentUser.nip}}</label>
 <!--              <input type="text" class="form-control" id="nip"  name="nip" #nip disabled  ngModel="{{currentUser.nip}}">-->
             </div>
           </form>
@@ -102,7 +102,7 @@
           <div class="card-body">
             <div class="col p-2">
                 <aside *ngIf="basket.getSum()!=0"> Wartość produktów: <b>{{basket.getSum() |number :'.2-2'}} zł </b><br>
-                  Dostawa : <b>{{deliveryCost}} zł</b><br>
+
                 </aside>
             </div>
           </div>
@@ -115,21 +115,22 @@
         <div class="card-body">
           <h4>Wybierz rodzaj dostawy: </h4>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked (click)="changeDeliveryCost(19.99)"  >
             <label class="form-check-label" for="flexRadioDefault1">
-              Inpost +cena 00.00 zł
+              Inpost 19.99 zł
+
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"  (click)="changeDeliveryCost(25.99)">
             <label class="form-check-label" for="flexRadioDefault2">
-              Poczta Polska +cena 00.00 zł
+              Poczta Polska 25.99zł
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3"  (click)="changeDeliveryCost(26.99)">
             <label class="form-check-label" for="flexRadioDefault3">
-              Inpost Kurier +cena 00.00 zł
+              Inpost Kurier 26.99 zł
             </label>
           </div>
 

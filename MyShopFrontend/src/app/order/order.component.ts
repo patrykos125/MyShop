@@ -47,12 +47,14 @@ export class OrderComponent implements OnInit{
     creationDate: new Date(),
   };
 
+
   constructor(private http:HttpClient, private router:Router, private userService: UserService, private orderService: OrderService) {
   }
 
   ngOnInit(): void {
-   // this.lockCompanyField();
+    this.lockCompanyField();
     this.setCurrentUser();
+
   }
 
   private setCurrentUser(){
@@ -142,6 +144,7 @@ export class OrderComponent implements OnInit{
     this.nipAlert="";
     let nipControl= new FormControl();
     if(this.isCompany.nativeElement.checked) {
+      this.currentUser.company=true;
       nipControl = new FormControl(user.nip, [
         Validators.required,
         Validators.pattern(/^[0-9]{10}$/)
@@ -150,6 +153,12 @@ export class OrderComponent implements OnInit{
       if (nipControl.invalid) {
         this.nipAlert = "Nie prawidłowy nip";
       }
+
+
+
+    }else {
+      this.currentUser.company=false;
+
     }
 
     if(firstNameControl.valid &&
@@ -168,7 +177,9 @@ export class OrderComponent implements OnInit{
   }
 
 
+
   private lockCompanyField() {
+
     const companyCheck = document.getElementById("companyCheck") as HTMLInputElement;
     const nipField = document.getElementById("nip") as HTMLInputElement;
 
