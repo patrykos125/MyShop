@@ -1,45 +1,57 @@
-<div class="row justify-content-center">
-  <div class="col-5 mt-3">
-    <div class="card">
-      <div class="card-header bg-primary text-white">
-        <h4 class="text-center">Przelew tradycyjny</h4>
-      </div>
-      <div class="card-body">
-
-        <span class="lh-lg"> Nazwa: <b> MyShop sp. z o.o. </b><br> </span>
-
-       <span class="lh-lg">  Adres: <b>Warszawa 00-902 ul. Wiejska 4 </b></span>
-
-      <span class="lh-lg"> <br>Tytuł przelewu: <b> {{payment_title}}</b></span>
-       <span class="lh-lg"> <br>Numer rachunku <b> PL 82 1020 5226 0000 6102 0417 7895</b></span>
-
-
-
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-
+<div class="container mt-5 mb-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card h-100">
+        <div class="card-header bg-primary text-white">
+          <h4 class="text-center">Przelew tradycyjny</h4>
         </div>
+        <div class="card-body">
+          <span class="lh-lg"> Nazwa: <b> MyShop sp. z o.o. </b><br> </span>
+          <span class="lh-lg">  Adres: <b>Warszawa 00-902 ul. Wiejska 4 </b></span>
+          <span class="lh-lg"> <br>Tytuł przelewu: <b> {{payment_title}}</b></span>
+          <span class="lh-lg"> <br>Numer rachunku <b> PL 82 1020 5226 0000 6102 0417 7895</b></span>
+
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          </div>
+        </div>
+      </div>
+  </div>
+    <div class="col-md-6">
+      <div class="card h-100">
+        <div class="card-header bg-primary text-white">
+          <h4 class="text-center">Płatność online</h4>
+        </div>
+        <div class="card-body">
+
+          <div class="row m-2">
+          <img src="./assets/img/blik.png" alt="blik" style="width:80px;height:40px;">
+            <div class="col lh-lg blockquote ">
+              Blik
+            </div>
+            <div class="col">
+              <button class="btn btn-secondary me-md-2 btn-lg w-100 " type="button">
+                <a class=" text-decoration-none link-light" href="https://www.blik.com/">Zapłać blikiem</a>
+              </button>
+            </div>
+          </div>
+
+          <div class="row m-2">
+            <img src="./assets/img/PayPal.svg.png" alt="blik" style="width:80px;height:30px;">
+            <div class="col lh-lg blockquote">
+              Paypal
+            </div>
+            <div class="col">
+              <button class="btn btn-secondary me-md-2 btn-lg w-100" type="button">
+                <a class=" text-decoration-none link-light" href="https://www.paypal.com/pl/home">Zapłać z PayPal</a>
+              </button>
+            </div>
+          </div>
       </div>
     </div>
   </div>
-  <div class="col-5 mt-3">
-    <div class="card">
-      <div class="card-header bg-primary text-white">
-        <h4 class="text-center">Płatność online</h4>
-      </div>
-      <div class="card-body">
-        <span class="lh-lg">Blik <a href="https://www.blik.com/">zapłać blikiem</a></span> <br>
-        <span class="lh-lg">Paypal <a href="https://www.paypal.com/pl/home">zapłać z paypal</a></span>
-
-
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-3 mt-3 mb-3 d-flex justify-content-around">
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
     <button class="btn btn-secondary me-md-2 btn-lg" type="button"><a class="text-decoration-none link-light" routerLink="/order-delivery-check">Cofnij</a></button>
-    <button  class="btn btn-success me-md-2 btn-lg" type="button"><a class="text-decoration-none link-light" routerLink="/" (click)="sendOrderToBackend()">Zapłaciłem</a></button>
+    <button  class="btn btn-success me-md-2 btn-lg" type="button"><a class="text-decoration-none link-light" routerLink="/" (click)="sendOrderToBackend()">Zakończ zakupy</a></button>
   </div>
-
+</div>
 </div>

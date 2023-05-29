@@ -144,11 +144,12 @@
       </div>
       <div class="card-body">
         Razem z dostawą: <b>{{basket.getSum() + deliveryCost |number :'.2-2'}}zł</b><br>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-          <button class="btn btn-secondary me-md-2 btn-lg" type="button"><a class="text-decoration-none link-light" routerLink="/order">Cofnij</a></button>
-          <button  class="btn btn-success me-md-2 btn-lg" type="button"><a class="text-decoration-none link-light" routerLink="/order-payment">Zapłać</a></button>
-        </div>
+
       </div>
+    </div>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
+      <button class="btn btn-secondary me-md-2 btn-lg" type="button"><a class="text-decoration-none link-light" routerLink="/order">Cofnij</a></button>
+      <button  class="btn btn-success me-md-2 btn-lg" type="button"><a class="text-decoration-none link-light" routerLink="/order-payment">Zapłać</a></button>
     </div>
     </div>
 
