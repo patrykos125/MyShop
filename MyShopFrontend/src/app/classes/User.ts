@@ -13,6 +13,7 @@ export class User{
     company: boolean;
     zipCode: string;
     nip?: string;
+    userRole: string;
     archiveOrders?: Order[];
     activeOrders?: Order[];
     creationDate?: Date;
@@ -27,6 +28,7 @@ export class User{
         email: string,
         company: boolean,
         zipCode: string,
+        userRole: string,
         apartmentnumber?: string,
         nip?: string,
         archiveOrders?: Order[],
@@ -46,6 +48,7 @@ export class User{
         this.company = company;
         this.zipCode = zipCode;
         this.nip = nip;
+        this.userRole = userRole;
         this.archiveOrders = archiveOrders;
         this.activeOrders = activeOrders;
         this.creationDate = creationDate;

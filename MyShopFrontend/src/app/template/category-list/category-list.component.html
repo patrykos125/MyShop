@@ -67,8 +67,8 @@
                   </div>
                 </li>
                 <li>
-                  <div >
-                    <a href="/send-payment-confirmation" class="btn m-2 p-2 btn-block login form-control" type="submit">
+                  <div *ngIf="isAdmin()">
+                    <a routerLink="/send-payment-confirmation" class="btn m-2 p-2 btn-block login form-control" type="submit">
                       <div class="link-dark rounded">
                         Panel Administratora
                       </div>

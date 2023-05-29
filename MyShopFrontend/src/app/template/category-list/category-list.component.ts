@@ -16,6 +16,10 @@ export class CategoryListComponent {
   isLogged(): boolean{
     return this.userService.isLogged;
   }
+  isAdmin():boolean{
+    return this.userService.isAdmin;
+  }
+
   logout(): any{
     this.userService.logout();
   }

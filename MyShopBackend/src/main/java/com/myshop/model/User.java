@@ -1,6 +1,7 @@
 package com.myshop.model;
 
 
+import com.myshop.model.enums.UserRole;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -41,6 +42,7 @@ public class User implements  UserDetails ,Serializable {
     private String nip;
     private LocalDate creationDate;
     private LocalDate lastLogin;
+    private UserRole userRole;
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "sessionId",referencedColumnName = "sessionId")
     private Session session;

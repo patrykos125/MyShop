@@ -1,5 +1,6 @@
 package com.myshop.controller;
 
+import com.myshop.model.enums.UserRole;
 import com.myshop.repository.SessionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,5 +23,18 @@ public class AuthController {
             return ResponseEntity.ok(false);
         }
     }
+
+    @GetMapping("/api/authAdmin")
+    public ResponseEntity<Boolean> checkUserRole(@RequestHeader("Authorization") String token) {
+        if(sessionRepository.findSessionBySessionKey(token).isPresent()){
+            if(sessionRepository.findSessionBySessionKey(token).get().getUser().getUserRole() == UserRole.Admin || sessionRepository.findSessionBySessionKey(token).get().getUser().getUserRole() == UserRole.Moderator) {
+                return ResponseEntity.ok(true);
+            }
+            return ResponseEntity.ok(false);
+        } else {
+            return ResponseEntity.ok(false);
+        }
+    }
+
 
 }

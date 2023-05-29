@@ -15,7 +15,7 @@ export class UserService{
 
   constructor(private http: HttpClient, private router:Router) { }
   isLogged: boolean = false;
-
+  isAdmin: boolean = false;
     
   checkTokenValidity(): Observable<boolean> {
     const httpOptions = {
@@ -26,9 +26,22 @@ export class UserService{
     };
     return this.http.get<boolean>('http://localhost:8080/api/auth', httpOptions);
   }
+
+  checkRole(): Observable<boolean> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `${sessionStorage.getItem('token')}`
+      })
+    };
+    return this.http.get<boolean>('http://localhost:8080/api/authAdmin', httpOptions);
+  }
   
   checkSession(): void {
       if(sessionStorage.getItem('token')){
+        this.checkRole().subscribe((response)=>{
+          if(response) this.isAdmin = true;
+        });
         this.isLogged = true;
       } else {
         this.isLogged = false;

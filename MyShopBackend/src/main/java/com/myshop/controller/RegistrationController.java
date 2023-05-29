@@ -2,6 +2,7 @@ package com.myshop.controller;
 
 import com.myshop.model.Session;
 import com.myshop.model.User;
+import com.myshop.model.enums.UserRole;
 import com.myshop.repository.UserRepository;
 import com.myshop.session.SessionRegistry;
 import lombok.AllArgsConstructor;
@@ -34,6 +35,7 @@ public class RegistrationController {
              newUser.setCreationDate(LocalDate.now());
              String sessionKey = sessionRegistry.generateSessionKey();
              newUser.setSession(new Session(sessionKey));
+             newUser.setUserRole(UserRole.Client);
              saved = userRepository.save(newUser);
              System.out.println(saved + " was added to database");
 

@@ -23,6 +23,7 @@ export class OrderDeliveryCheckComponent implements OnInit{
     houseNumber: '',
     apartmentNumber: '',
     phoneNumber: '',
+    userRole: '',
     email: '',
     company: false,
     zipCode: '',
