@@ -63,17 +63,15 @@
       </div>
     </div>
 
-
-        <div class="col-xl-12 m-3">
-          <div class="card">
-            <div class="card-header bg-primary text-white">
+      <div class="col-xl-12 m-3">
+        <div class="card">
+          <div class="card-header bg-primary text-white">
             <h4 class="text-center">Płatności użytkowników</h4>
           </div>
-            <div class="card-body">
-
-              <div class="table-responsive">
-                <table class="table table-hover mb-0">
-                  <thead>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-hover mb-0">
+                <thead>
                   <tr class="align-self-center">
                     <th>Id zamówienia</th>
                     <th>Imie i nazwisko klienta</th>
@@ -82,49 +80,48 @@
                     <th>Kwota</th>
                     <th>Stan transakcji</th>
                   </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                    <td>34567</td>
-                    <td><img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="thumb-sm rounded-circle mr-2"> Kevin Heal</td>
-                    <td>Paypal</td>
-                    <td>5/8/2023</td>
-                    <td>15,00zl</td>
-                    <td><span class="badge badge-boxed badge-soft-warning">panding</span></td>
-                  </tr>
-                  <tr>
-                    <td>3453455</td>
-                    <td><img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" class="thumb-sm rounded-circle mr-2"> Frank M. Lyons</td>
-                    <td>Paypal</td>
-                    <td>15/7/2023</td>
-                    <td>70,00zl</td>
-                    <td><span class="badge badge-boxed badge-soft-primary">Success</span></td>
-                  </tr>
-                  <tr>
-                    <td>34533367</td>
-                    <td><img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="" class="thumb-sm rounded-circle mr-2"> Angelo Butler</td>
-                    <td>Blik</td>
-                    <td>30/9/2023</td>
-                    <td>45,00zl</td>
-                    <td><span class="badge badge-boxed badge-soft-warning">Panding</span></td>
-                  </tr>
-                  <tr>
-                    <td>3456777</td>
-                    <td><img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="" class="thumb-sm rounded-circle mr-2"> Phillip Morse</td>
-                    <td>Paypal</td>
-                    <td>2/6/2023</td>
-                    <td>70,00zl</td>
-                    <td><span class="badge badge-boxed badge-soft-primary">Success</span></td>
-                  </tr>
-
-                  </tbody>
-                </table>
-              </div>
-              <!--end table-responsive-->
-              <div class="pt-3 border-top text-right"><a href="#" class="text-primary">View all <i class="mdi mdi-arrow-right"></i></a></div>
+                </thead>
+                <tbody>
+                  <ng-container *ngFor="let order of showAll ? orders : orders.slice(0, 5); let i = index">
+                    <tr (click)="expandRow(i)">
+                      <td>{{ order.id }}</td>
+                      <td>
+                        <img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="" class="thumb-sm rounded-circle mr-2">
+                        Test Test
+                      <!--  {{ order.name }} -->
+                      </td>
+                      <!-- <td>{{ order.paymentType }}</td> -->
+                      <td> Blik </td>
+                      <td>{{ order.date }}</td>
+                      <td>{{ getTotal(order) }}</td>
+                      <td><span [ngClass]="getStatusClass(order.status)">{{ order.status }}</span></td>
+                    </tr>
+                    <tr class="expandendrow" *ngIf="expandedRows[i]">
+                      <td colspan="6">
+                        <!-- Additional details/options for the expanded row -->
+                        <div class="expanded-details">
+                          <div class="d-flex justify-content-between">
+                            <h5>Kupione przedmioty:</h5>
+                            <button *ngIf="order.status === 'Realizowane'" class="btn btn-primary" (click)="changeStatus(order.id)">Change Status</button>
+                          </div>
+                          <ul class="list-group mt-3">
+                            <li class="list-group-item list-group-item-primary  d-inline-block text-truncate" style="max-width: 350px; overflow: hidden; text-overflow: ellipsis;" *ngFor="let item of order.items">{{ item.shortDescription }} - cena: {{ item.price }} zł - szt. {{ item.amount}}</li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                  </ng-container>
+                </tbody>
+              </table>
+            </div>
+            <!--end table-responsive-->
+            <div class="pt-3 border-top text-right">
+              <button *ngIf="!showAll" class="btn btn-primary text-white" (click)="viewAll()">Pokaz wszystkie<i class="mdi mdi-arrow-right"></i></button>
+              <button *ngIf="showAll" class="btn btn-primary text-white" (click)="viewAll()">Zwin<i class="mdi mdi-arrow-right"></i></button>
             </div>
           </div>
         </div>
+      </div>
 
 
 

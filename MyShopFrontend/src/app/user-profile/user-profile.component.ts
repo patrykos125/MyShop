@@ -32,6 +32,7 @@ export class UserProfileComponent implements OnInit {
     houseNumber: '',
     apartmentNumber: '',
     phoneNumber: '',
+    userRole: '',
     email: '',
     company: false,
     zipCode: '',
@@ -46,7 +47,6 @@ export class UserProfileComponent implements OnInit {
   }
   ngOnInit(): void {
     this.userService.getUser().subscribe(user => {
-
       this.currentUser = user;
     });
   }

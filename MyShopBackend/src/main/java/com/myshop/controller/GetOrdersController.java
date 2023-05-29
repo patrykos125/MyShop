@@ -3,6 +3,7 @@ package com.myshop.controller;
 import com.myshop.model.Order;
 import com.myshop.model.User;
 import com.myshop.model.dto.OrderDto;
+import com.myshop.model.enums.UserRole;
 import com.myshop.repository.OrderRepository;
 import com.myshop.repository.SessionRepository;
 import com.myshop.repository.UserRepository;
@@ -47,4 +48,24 @@ public class GetOrdersController {
         }
         return null;
     }
+
+    @GetMapping("/order/getAllOrders")
+    public List<OrderDto> AllOrders(@RequestHeader("Authorization") String token) {
+        if (sessionRepository.findSessionBySessionKey(token).isPresent() && ( sessionRepository.findSessionBySessionKey(token).get().getUser().getUserRole() == UserRole.Admin ||  sessionRepository.findSessionBySessionKey(token).get().getUser().getUserRole() == UserRole.Moderator)) {
+                List<Order> orders = orderRepository.findAll();
+                List<OrderDto> orderDTOs = new ArrayList<>();
+                for (Order order : orders) {
+                    OrderDto orderDTO = new OrderDto();
+                    orderDTO.setId(order.getId());
+                    orderDTO.setDate(order.getDate());
+                    orderDTO.setItems(order.getItems());
+                    orderDTO.setStatus(order.getStatus());
+                    orderDTOs.add(orderDTO);
+                }
+                return orderDTOs;
+            } else {
+                return null;
+            }
+    }
+
 }

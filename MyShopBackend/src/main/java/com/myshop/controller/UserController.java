@@ -35,6 +35,7 @@ public class UserController {
         userf.setZipCode(user.getZipCode());
         userf.setHouseNumber(user.getHouseNumber());
         userf.setCreationDate(user.getCreationDate());
+        userf.setUserRole(user.getUserRole());
 
         return userf;
     }

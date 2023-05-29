@@ -54,6 +54,14 @@ export class LoginPageComponent {
             this.sessionKey
           );
           this.userService.isLogged = true;
+
+          this.userService.checkRole().subscribe((response)=>{
+            if(response){
+              this.userService.isAdmin = true;
+            }
+          });
+
+
         }
 
         this.router.navigate(['/']);
