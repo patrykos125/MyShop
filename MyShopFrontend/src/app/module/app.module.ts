@@ -23,6 +23,7 @@ import { FavPageComponent } from '../fav-page/fav-page.component';
 import { OrderComponent } from '../order/order.component';
 import { OrderDeliveryCheckComponent } from '../order-delivery-check/order-delivery-check.component';
 import {OrderPaymentComponent} from "../order-payment/order-payment.component";
+import { SendPaymentConfirmationComponent } from '../send-payment-confirmation/send-payment-confirmation.component';
 
 
 
@@ -45,7 +46,8 @@ import {OrderPaymentComponent} from "../order-payment/order-payment.component";
     FavPageComponent,
     OrderComponent,
     OrderDeliveryCheckComponent,
-    OrderPaymentComponent
+    OrderPaymentComponent,
+    SendPaymentConfirmationComponent
 
 
   ],

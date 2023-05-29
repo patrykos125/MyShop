@@ -13,6 +13,7 @@ import {FavPageComponent} from "../fav-page/fav-page.component";
 import {OrderComponent} from "../order/order.component";
 import {OrderDeliveryCheckComponent} from "../order-delivery-check/order-delivery-check.component";
 import {OrderPaymentComponent} from "../order-payment/order-payment.component";
+import {SendPaymentConfirmationComponent} from "../send-payment-confirmation/send-payment-confirmation.component";
 
 
 const routes:Routes=[
@@ -26,6 +27,7 @@ const routes:Routes=[
   {path: 'order', component: OrderComponent},
   {path: 'order-delivery-check', component: OrderDeliveryCheckComponent},
   {path: 'order-payment', component: OrderPaymentComponent},
+  {path: 'send-payment-confirmation', component: SendPaymentConfirmationComponent},
   {path: 'login', component: LoginPageComponent,  canActivate:[UserService] },
   {path:':category', component: CategoryComponent },
   {path: 'item/:id', component: ItemPageComponent }
