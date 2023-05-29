@@ -144,9 +144,9 @@ export class UserProfileComponent implements OnInit {
     if(firstNameControl.invalid){
       this.fistNameAlert="Pole imie musi zawierać co najmiej 2 znaki"
     }
-    if(data.firstName === this.currentUser.firstName){
-      this.fistNameAlert="Takie samo imie"
-    }
+    // if(data.firstName === this.currentUser.firstName){
+    //   this.fistNameAlert="Takie samo imie"
+    // }
     }
     this.surnameAlert = "";
     if(data.surname != ""){
@@ -157,9 +157,9 @@ export class UserProfileComponent implements OnInit {
       if(surnameNameControl.invalid){
         this.surnameAlert="Pole nazwisko musi zawierać co najmiej 2 znaki"
       }
-      if(data.surname === this.currentUser.surname){
-        this.surnameAlert="Takie samo nazwisko"
-      }
+      // if(data.surname === this.currentUser.surname){
+      //   this.surnameAlert="Takie samo nazwisko"
+      // }
     }
     this.zipCodeAlert="";
     if(data.zipCode != ""){
@@ -170,9 +170,9 @@ export class UserProfileComponent implements OnInit {
    if(  zipCodeControl.invalid){
      this.zipCodeAlert="Nie prawidłowy kod pocztowy"
     }
-    if(data.zipCode === this.currentUser.zipCode){
-      this.zipCodeAlert="Taki sam kod pocztowy"
-    }
+    // if(data.zipCode === this.currentUser.zipCode){
+    //   this.zipCodeAlert="Taki sam kod pocztowy"
+    // }
     }
     this.cityAlert="";
     if(data.city != ""){
@@ -183,9 +183,9 @@ export class UserProfileComponent implements OnInit {
     if(cityControl.invalid){
       this.cityAlert="Pole miasto musi zawierać co najmiej 2 znaki"
     }
-    if(data.city === this.currentUser.city){
-      this.cityAlert="Takie samo miasto"
-    }
+    // if(data.city === this.currentUser.city){
+    //   this.cityAlert="Takie samo miasto"
+    // }
     }
     this.streetAlert="";
     if(data.street != ""){
@@ -196,9 +196,9 @@ export class UserProfileComponent implements OnInit {
       if(streetControl.invalid){
         this.streetAlert="Pole ulica musi zawierać co najmiej 2 znaki"
       }
-      if(data.street === this.currentUser.street){
-        this.streetAlert="Taka sama ulica"
-      }
+      // if(data.street === this.currentUser.street){
+      //   this.streetAlert="Taka sama ulica"
+      // }
     }
     this.houseNumberAlert="";
     if(data.houseNumber !=""){
@@ -209,9 +209,9 @@ export class UserProfileComponent implements OnInit {
       if(houseNumberControl.invalid){
         this.houseNumberAlert="Pole numer doumu nie może być puste "
       }
-      if(data.houseNumber === this.currentUser.houseNumber){
-        this.houseNumberAlert="Taki sam numer domu"
-      }
+      // if(data.houseNumber === this.currentUser.houseNumber){
+      //   this.houseNumberAlert="Taki sam numer domu"
+      // }
     }
     this.phoneNumberAlert="";
     if(data.phoneNumber != ""){
@@ -222,9 +222,9 @@ export class UserProfileComponent implements OnInit {
     if(phoneNumberControl.invalid){
       this.phoneNumberAlert="Nie prawidłowy numer telefonu"
     }
-    if(data.phoneNumber === this.currentUser.phoneNumber){
-      this.phoneNumberAlert="Taki sam numer telefonu"
-    }
+    // if(data.phoneNumber === this.currentUser.phoneNumber){
+    //   this.phoneNumberAlert="Taki sam numer telefonu"
+    // }
     }
 
     this.nipAlert="";
@@ -238,9 +238,9 @@ export class UserProfileComponent implements OnInit {
         this.nipAlert = "Nie prawidłowy nip"
       }
       let nipToCheck:any = this.currentUser.nip!;
-      if(data.nip === nipToCheck){
-        this.nipAlert="Taki sam numer nip"
-      }
+      // if(data.nip === nipToCheck){
+      //   this.nipAlert="Taki sam numer nip"
+      // }
     }
 
     if (
