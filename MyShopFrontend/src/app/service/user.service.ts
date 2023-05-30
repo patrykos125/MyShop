@@ -41,10 +41,12 @@ export class UserService{
       if(sessionStorage.getItem('token')){
         this.checkRole().subscribe((response)=>{
           if(response) this.isAdmin = true;
+          else this.isAdmin = false;
         });
         this.isLogged = true;
       } else {
         this.isLogged = false;
+        this.isAdmin = false;
       }
   }
 

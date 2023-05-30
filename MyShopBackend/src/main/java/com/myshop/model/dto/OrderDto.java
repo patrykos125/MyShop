@@ -15,4 +15,6 @@ public class OrderDto {
     private LocalDate date;
     private List<BuyedItems> items;
     private String status;
+
+    private UserDto user;
 }

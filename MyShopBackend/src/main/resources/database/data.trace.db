@@ -212,3 +212,15 @@ The connection was not closed by the application and is garbage collected [90018
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Błąd składniowy w wyrażeniu SQL "delete BUYED_ITEMS [*]from BUYED_ITEMS where 1!=1"
 Syntax error in SQL statement "delete BUYED_ITEMS [*]from BUYED_ITEMS where 1!=1"; SQL statement:
 delete BUYED_ITEMS from BUYED_ITEMS where 1!=1 [42000-214]
+2023-05-29 18:55:11 jdbc[16]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'Admin' (USERS: ""USER_ROLE"" SMALLINT)"; SQL statement:
+UPDATE "PUBLIC"."USERS" SET "USER_ID"=? ,"APARTMENT_NUMBER"=? ,"CITY"=? ,"COMPANY"=? ,"CREATION_DATE"=? ,"EMAIL"=? ,"FIRST_NAME"=? ,"HOUSE_NUMBER"=? ,"LAST_LOGIN"=? ,"NIP"=? ,"PASSWORD"=? ,"PHONE_NUMBER"=? ,"STREET"=? ,"SURNAME"=? ,"ZIP_CODE"=? ,"SESSION_ID"=? ,"USER_ROLE"=?  WHERE "USER_ID"=? [22018-214]
+2023-05-29 18:55:11 jdbc[16]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'Admin' (USERS: ""USER_ROLE"" SMALLINT)"; SQL statement:
+UPDATE "PUBLIC"."USERS" SET "USER_ID"=? ,"APARTMENT_NUMBER"=? ,"CITY"=? ,"COMPANY"=? ,"CREATION_DATE"=? ,"EMAIL"=? ,"FIRST_NAME"=? ,"HOUSE_NUMBER"=? ,"LAST_LOGIN"=? ,"NIP"=? ,"PASSWORD"=? ,"PHONE_NUMBER"=? ,"STREET"=? ,"SURNAME"=? ,"ZIP_CODE"=? ,"SESSION_ID"=? ,"USER_ROLE"=?  WHERE "USER_ID"=? [22018-214]
+2023-05-29 18:55:29 jdbc[16]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'Admin' (USERS: ""USER_ROLE"" SMALLINT)"; SQL statement:
+UPDATE "PUBLIC"."USERS" SET "USER_ID"=? ,"APARTMENT_NUMBER"=? ,"CITY"=? ,"COMPANY"=? ,"CREATION_DATE"=? ,"EMAIL"=? ,"FIRST_NAME"=? ,"HOUSE_NUMBER"=? ,"LAST_LOGIN"=? ,"NIP"=? ,"PASSWORD"=? ,"PHONE_NUMBER"=? ,"STREET"=? ,"SURNAME"=? ,"ZIP_CODE"=? ,"SESSION_ID"=? ,"USER_ROLE"=?  WHERE "USER_ID"=? [22018-214]
+2023-05-29 18:55:29 jdbc[16]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'Admin' (USERS: ""USER_ROLE"" SMALLINT)"; SQL statement:
+UPDATE "PUBLIC"."USERS" SET "USER_ID"=? ,"APARTMENT_NUMBER"=? ,"CITY"=? ,"COMPANY"=? ,"CREATION_DATE"=? ,"EMAIL"=? ,"FIRST_NAME"=? ,"HOUSE_NUMBER"=? ,"LAST_LOGIN"=? ,"NIP"=? ,"PASSWORD"=? ,"PHONE_NUMBER"=? ,"STREET"=? ,"SURNAME"=? ,"ZIP_CODE"=? ,"SESSION_ID"=? ,"USER_ROLE"=?  WHERE "USER_ID"=? [22018-214]
