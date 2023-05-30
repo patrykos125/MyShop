@@ -14,6 +14,7 @@ import lombok.NoArgsConstructor;
 public class BuyedItems {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long BuyedItemId;
     private long itemId;
     private String  shortDescription;
     private String longDescription;

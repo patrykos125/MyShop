@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -52,12 +53,12 @@ public class OrderController {
                 order.setStatus("Realizowane");
                 orderRepository.save(order);
 
+                List<BuyedItems> newItems = new ArrayList<>();
                 for(BuyedItems item : buyedItems){
-                    BuyedItems newItem;
-                    newItem = item;
-                    newItem.setOrder(order);
-                    buyedItemsRepository.save(newItem);
+                    item.setOrder(order);
+                    newItems.add(item);
                 }
+                buyedItemsRepository.saveAll(newItems);
 
                 orderRepository.save(order);
                 return ResponseEntity.ok(true);
