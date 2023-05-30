@@ -51,7 +51,8 @@ public class GetOrdersController {
 
     @GetMapping("/order/getAllOrders")
     public List<OrderDto> AllOrders(@RequestHeader("Authorization") String token) {
-        if (sessionRepository.findSessionBySessionKey(token).isPresent() && ( sessionRepository.findSessionBySessionKey(token).get().getUser().getUserRole() == UserRole.Admin ||  sessionRepository.findSessionBySessionKey(token).get().getUser().getUserRole() == UserRole.Moderator)) {
+        if (sessionRepository.findSessionBySessionKey(token).isPresent() && ( sessionRepository.findSessionBySessionKey(token).get().getUser().getUserRole() == UserRole.Admin
+                ||  sessionRepository.findSessionBySessionKey(token).get().getUser().getUserRole() == UserRole.Moderator)) {
                 List<Order> orders = orderRepository.findAll();
                 List<OrderDto> orderDTOs = new ArrayList<>();
                 for (Order order : orders) {

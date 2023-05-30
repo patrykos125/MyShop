@@ -24,6 +24,7 @@ import { OrderComponent } from '../order/order.component';
 import { OrderDeliveryCheckComponent } from '../order-delivery-check/order-delivery-check.component';
 import {OrderPaymentComponent} from "../order-payment/order-payment.component";
 import { SendPaymentConfirmationComponent } from '../send-payment-confirmation/send-payment-confirmation.component';
+import {AddItemPageComponent} from "../admin-panel/add-item-page/add-item-page.component";
 
 
 
@@ -47,7 +48,8 @@ import { SendPaymentConfirmationComponent } from '../send-payment-confirmation/s
     OrderComponent,
     OrderDeliveryCheckComponent,
     OrderPaymentComponent,
-    SendPaymentConfirmationComponent
+    SendPaymentConfirmationComponent,
+    AddItemPageComponent
 
 
   ],
