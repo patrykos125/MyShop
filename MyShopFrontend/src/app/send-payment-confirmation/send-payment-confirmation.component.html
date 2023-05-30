@@ -86,8 +86,8 @@
                     <tr (click)="expandRow(i)">
                       <td>{{ order.id }}</td>
                       <td>
-                        <img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="" class="thumb-sm rounded-circle mr-2">
-                        Test Test
+                        <img [src]="order.avatar" alt="" class="thumb-sm rounded-circle mr-2">
+                       {{ order.user!.firstName }} {{ order.user!.surname }}
                       <!--  {{ order.name }} -->
                       </td>
                       <!-- <td>{{ order.paymentType }}</td> -->

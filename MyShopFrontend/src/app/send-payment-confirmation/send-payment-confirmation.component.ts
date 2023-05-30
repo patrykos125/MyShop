@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { UserService } from '../service/user.service';
 import { Router } from '@angular/router';
 import { AdminService } from '../service/admin.service';
@@ -11,12 +11,14 @@ import { Order } from '../classes/Order';
 })
 export class SendPaymentConfirmationComponent {
 
+
+
   orders:Order[] = [];
 
   expandedRows: boolean[] = [];
   showAll = false;
 
-  constructor(private userService:UserService, private router: Router, private adminService:AdminService){
+  constructor(private userService:UserService, private router: Router, private adminService:AdminService, private cdr: ChangeDetectorRef){
     userService.checkRole().subscribe((response)=>{
       if(!response){
         this.router.navigate(['/']);
@@ -26,6 +28,7 @@ export class SendPaymentConfirmationComponent {
     adminService.getAllOrders().subscribe((response)=>{
       if(response){
         this.orders = response;
+        this.addAvatars();
       }
     })
 
@@ -72,4 +75,21 @@ export class SendPaymentConfirmationComponent {
     return total.toFixed(2);
   }
 
+  getRandomAvatar(): string {
+    const avatars: string[] = [
+      'https://bootdey.com/img/Content/avatar/avatar1.png',
+      'https://bootdey.com/img/Content/avatar/avatar2.png',
+      'https://bootdey.com/img/Content/avatar/avatar3.png',
+      'https://bootdey.com/img/Content/avatar/avatar4.png'
+    ];
+    const randomIndex = Math.floor(Math.random() * avatars.length);
+    return avatars[randomIndex];
+  }
+
+  addAvatars(): void {
+    this.orders.forEach(order => {
+      order.avatar = this.getRandomAvatar();
+      console.log(this.orders);
+    });
+  }
 }

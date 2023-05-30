@@ -3,6 +3,7 @@ package com.myshop.controller;
 import com.myshop.model.Order;
 import com.myshop.model.User;
 import com.myshop.model.dto.OrderDto;
+import com.myshop.model.dto.UserDto;
 import com.myshop.model.enums.UserRole;
 import com.myshop.repository.OrderRepository;
 import com.myshop.repository.SessionRepository;
@@ -61,6 +62,10 @@ public class GetOrdersController {
                     orderDTO.setDate(order.getDate());
                     orderDTO.setItems(order.getItems());
                     orderDTO.setStatus(order.getStatus());
+                    UserDto userInfo= new UserDto();
+                    userInfo.setFirstName(order.getUser().getFirstName());
+                    userInfo.setSurname(order.getUser().getSurname());
+                    orderDTO.setUser(userInfo);
                     orderDTOs.add(orderDTO);
                 }
                 return orderDTOs;
