@@ -7,6 +7,10 @@ import {FormControl, Validators} from "@angular/forms";
 import {UserService} from "../service/user.service";
 import {User} from "../classes/User";
 import {OrderService} from "../service/order.service";
+import {AddressDto} from "../classes/AddressDto";
+import {AddressService} from "../service/address.service";
+import {Item} from "../classes/Item";
+
 
 @Component({
   selector: 'app-order',
@@ -31,6 +35,23 @@ export class OrderComponent implements OnInit{
   emailTaken: string = "";
   submitButtonText: string = "Dalej";
 
+   addressDto:AddressDto={
+     firstName:"" ,
+   surname :"",
+   zipCode :"",
+   city :"",
+   street :"",
+   houseNumber:"" ,
+   apartmentNumber:"" ,
+   phoneNumber :"",
+
+
+   };
+   public addressList :AddressDto[]|undefined;
+
+
+
+
   currentUser :User={
     id: 0,
     firstName: '',
@@ -49,13 +70,13 @@ export class OrderComponent implements OnInit{
   };
 
 
-  constructor(private http:HttpClient, private router:Router, private userService: UserService, private orderService: OrderService) {
+  constructor(private http:HttpClient, private router:Router, private userService: UserService, private orderService: OrderService ,private  addressService:AddressService) {
   }
 
   ngOnInit(): void {
     this.lockCompanyField();
     this.setCurrentUser();
-
+    this.getAddress();
   }
 
   private setCurrentUser(){
@@ -67,6 +88,7 @@ export class OrderComponent implements OnInit{
   public onSubmit(data:any){
     this.orderService.setUserForOrder(data);
     this.router.navigate(['order-delivery-check']);
+
   }
   public validData(user:User){
     //
@@ -192,5 +214,30 @@ export class OrderComponent implements OnInit{
         nipField.setAttribute("disabled", "true");
       }
     });
+  }
+  public  saveAddress(user:User){
+     this.addressDto.firstName = user.firstName;
+     this.addressDto.surname = user.surname;
+     this.addressDto.zipCode = user.zipCode;
+     this.addressDto.city = user.city;
+     this.addressDto.street = user.street;
+     this.addressDto.houseNumber = user.houseNumber;
+     this.addressDto.apartmentNumber = user.apartmentNumber;
+     this.addressDto.phoneNumber = user.phoneNumber;
+
+
+      this.addressService.saveAddress(this.addressDto);
+
+
+  }
+  public  getAddress(){
+     this.addressService.getAddress().subscribe(x=>{
+       this.addressList=x;
+       console.log(this.addressList);
+
+     })
+  }
+  public fillFields(){
+
   }
 }

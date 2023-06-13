@@ -1,6 +1,7 @@
 package com.myshop.model;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.myshop.model.enums.UserRole;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -30,13 +31,16 @@ public class User implements  UserDetails ,Serializable {
     private Long userId;
     private String password;
     private String firstName;
+    private String surname;
     private String zipCode;
     private String city;
     private String street;
     private String houseNumber;
     private String apartmentNumber;
-    private String surname;
     private String phoneNumber;
+    @OneToMany(mappedBy = "user")
+    @JsonManagedReference
+    private  List<Address> addresses = new ArrayList<>();
     private String email;
     private boolean company;
     private String nip;

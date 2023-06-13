@@ -13,12 +13,16 @@ import java.time.LocalDate;
 import java.util.UUID;
 @Component
 @AllArgsConstructor
+
 public class SessionRegistry {
+
     PasswordEncoder passwordEncoder;
 
      SessionRepository sessionRepository;
 
     UserRepository userRepository;
+
+
 
     public  String registerSession(final String email){
         if (email== null){

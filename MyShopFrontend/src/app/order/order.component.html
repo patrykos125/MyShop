@@ -3,6 +3,17 @@
     <div class="col-md-6">
       <div class="card">
         <div class="card-header bg-primary text-white">
+          <h4 class="text-center">Zapisane adresy </h4>
+        </div>
+        <input class="m-lg-2" list="address-list"  id="address" name="address" ngModel (change)="fillFields()">
+
+        <datalist id="address-list" >
+          <option *ngFor="let address of addressList" value="{{address.firstName}} {{address.surname}} ">
+            {{address.street}} {{address.houseNumber}} {{address.apartmentNumber}} {{address.zipCode}} {{address.city}}  </option>
+
+
+        </datalist>
+        <div class="card-header bg-primary text-white">
           <h4 class="text-center">Dane do zamówienia</h4>
         </div>
         <div class="card-body">
@@ -100,6 +111,7 @@
             <button type="submit" id="registerButton" class="btn btn-primary mt-2 float-end">{{submitButtonText}}</button>
 
           </form>
+          <button  id="saveAddressButton" class="btn btn-primary mt-2 " (click)="saveAddress(order.value)" >Zapisz adres</button>
 
 
         </div>

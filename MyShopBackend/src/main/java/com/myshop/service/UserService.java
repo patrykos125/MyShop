@@ -4,28 +4,27 @@ import com.myshop.model.Session;
 import com.myshop.model.User;
 import com.myshop.repository.UserRepository;
 import com.myshop.session.SessionRegistry;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 @Service
+@Component
+@AllArgsConstructor
 public class UserService implements UserDetailsService {
 
-    private final UserRepository userRepository;
-    private final PasswordEncoder passwordEncoder;
-    private final SessionRegistry sessionRegistry;
+    private  UserRepository userRepository;
 
 
-        @Autowired
-    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, SessionRegistry sessionRegistry) {
-        this.userRepository = userRepository;
-            this.passwordEncoder = passwordEncoder;
-            this.sessionRegistry = sessionRegistry;
-        }
+
+
+
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
