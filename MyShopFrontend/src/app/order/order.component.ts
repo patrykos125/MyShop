@@ -50,8 +50,6 @@ export class OrderComponent implements OnInit{
    public addressList :AddressDto[]|undefined;
 
 
-
-
   currentUser :User={
     id: 0,
     firstName: '',
@@ -237,7 +235,15 @@ export class OrderComponent implements OnInit{
 
      })
   }
-  public fillFields(){
-
+  public fillFields(address: AddressDto) {
+    this.currentUser.firstName = address.firstName;
+    this.currentUser.surname = address.surname;
+    this.currentUser.street = address.street;
+    this.currentUser.houseNumber = address.houseNumber;
+    this.currentUser.apartmentNumber = address.apartmentNumber;
+    this.currentUser.zipCode = address.zipCode;
+    this.currentUser.city = address.city;
   }
+  
+
 }

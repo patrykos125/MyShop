@@ -5,14 +5,15 @@
         <div class="card-header bg-primary text-white">
           <h4 class="text-center">Zapisane adresy </h4>
         </div>
-        <input class="m-lg-2" list="address-list"  id="address" name="address" ngModel (change)="fillFields()">
 
-        <datalist id="address-list" >
-          <option *ngFor="let address of addressList" value="{{address.firstName}} {{address.surname}} ">
-            {{address.street}} {{address.houseNumber}} {{address.apartmentNumber}} {{address.zipCode}} {{address.city}}  </option>
+      <select (ngModelChange)="fillFields($event)" [ngModel]="addressDto">
+        <option *ngFor="let address of addressList" [ngValue]="address">
+          {{ address.firstName }} {{ address.surname }}
+          {{ address.street }} {{ address.houseNumber }} {{ address.apartmentNumber }} {{ address.zipCode }} {{ address.city }}
+        </option>
+      </select>
 
 
-        </datalist>
         <div class="card-header bg-primary text-white">
           <h4 class="text-center">Dane do zamówienia</h4>
         </div>
