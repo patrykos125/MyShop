@@ -1,0 +1,87 @@
+<section class="py-5">
+  <div class="container">
+    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 " >
+
+      <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
+        <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+          <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+
+        </a>
+        <ul class="list-unstyled ps-0">
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+               <span class="fs-5 fw-semibold">Category</span>
+            </button>
+            <div class="collapse show" id="home-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small text-decoration-none" id="list">
+                <li><a href="/shoes" class="link-dark rounded text-decoration-none">Shoes</a></li>
+                <li><a href="/t_shirt" class="link-dark rounded text-decoration-none">T-shirt</a></li>
+                <li><a href="/trousers" class="link-dark rounded text-decoration-none">Trousers</a></li>
+                <li><a href="/cap" class="link-dark rounded text-decoration-none">Cap</a></li>
+                <li><a href="/dress" class="link-dark rounded text-decoration-none">Dress</a></li>
+                <li><a href="/shorts" class="link-dark rounded text-decoration-none">Shorts</a></li>
+                <li><a href="/socks" class="link-dark rounded text-decoration-none">Socks</a></li>
+                <li><a href="/hoodie" class="link-dark rounded text-decoration-none">Hoodie</a></li>
+                <li><a href="/skirt" class="link-dark rounded text-decoration-none">Skirt</a></li>
+                <li><a href="/jacket" class="link-dark rounded text-decoration-none">Jacket</a></li>
+                <li><a href="/shirt" class="link-dark rounded text-decoration-none">Shirt</a></li>
+              </ul>
+            </div>
+          </li>
+
+<!--          <li class="mb-1">-->
+<!--            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">-->
+<!--              Orders-->
+<!--            </button>-->
+<!--            <div class="collapse" id="orders-collapse">-->
+<!--              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">-->
+<!--                <li><a href="#" class="link-dark rounded">New</a></li>-->
+<!--                <li><a href="#" class="link-dark rounded">Processed</a></li>-->
+<!--                <li><a href="#" class="link-dark rounded">Shipped</a></li>-->
+<!--                <li><a href="#" class="link-dark rounded">Returned</a></li>-->
+<!--              </ul>-->
+<!--            </div>-->
+<!--          </li>-->
+          <li class="border-top my-3"></li>
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed " data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+              Account
+            </button>
+            <div class="collapse" id="account-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li>
+                  <div *ngIf="!isLogged()">
+<!--                    bg-primary-subtle-->
+                    <a href="/login" class="btn m-2 p-2 btn-block login form-control" type="submit">
+                      <div class="link-dark rounded">
+                       login
+                      </div>
+                    </a>
+                  </div>
+                  <div *ngIf="isLogged()">
+                    <a (click)="logout()" class="btn m-2 p-2  btn-block login form-control " type="submit">
+                      <div class="link-dark rounded">
+                       logout
+                      </div>
+                      </a>
+                  </div>
+                </li>
+                <li>
+                  <div *ngIf="isAdmin()">
+                    <a routerLink="/send-payment-confirmation" class="btn m-2 p-2 btn-block login form-control" type="submit">
+                      <div class="link-dark rounded">
+                        Panel Administratora
+                      </div>
+                    </a>
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>

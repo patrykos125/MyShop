@@ -7,5 +7,8 @@ export enum Category {
   SHORTS,
   SOCKS,
   HOODIE,
-  SKIRT
+  SKIRT,
+JACKET,
+  SHIRT
+
 }

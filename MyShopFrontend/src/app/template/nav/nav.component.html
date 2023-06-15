@@ -1,26 +1,37 @@
+
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container px-5 px-lg-5">
+  <div class="container px-5 px-lg-5 ">
     <img src="assets/img/icon/shop.png" class="icon-logo" alt="favourite">
     <a routerLink="/" id="logoShop">
       <h1 class="display-4 fw-bolder">MyShop</h1>
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span
       class="navbar-toggler-icon"></span></button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse justify-content-center text-center" id="navbarNav">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
       </ul>
 
-      <ul class="navbar-nav ">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#!">
+          <a class="nav-link active" aria-current="page" >
+            <a routerLink="/fav-page">
             <img src="assets/img/icon/heart.png" class="icon" alt="favourite">
+              <span *ngIf="favoritesCount > 0" class="itemcount translate-middle badge rounded-pill bg-danger" style="position:absolute; margin-left: -50px;">
+              {{favoritesCount}}
+            </span>
+              </a>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#!">
-            <a routerLink="/basket"><img src="assets/img/icon/shopping-cart.png" class="icon" alt="basket"></a>
+          <a routerLink="/basket" class="nav-link">
+            <img src="assets/img/icon/shopping-cart.png" class="icon" alt="basket">
+
+            <span *ngIf="BasketCount > 0" class="itemcount translate-middle badge rounded-pill bg-danger" style="position:absolute; margin-left: -50px;">
+              {{BasketCount}}
+            </span>
           </a>
         </li>
         <li class="nav-item">

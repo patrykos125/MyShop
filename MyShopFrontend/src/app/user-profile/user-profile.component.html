@@ -1,346 +1,325 @@
+<div class="container">
+  <div class="card">
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand h3">Profil</a>
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item h3 bg-dark-subtle text-center" (click)="toggleVisibility('showPersonal')">
-        <a class="nav-link cursor-pointer">Dane</a>
-      </li>
-      <li class="nav-item h3 bg-body-secondary text-center cursor-pointer" (click)="toggleVisibility('showChangePassword')">
-        <a class="nav-link">Zmień hasło</a>
-      </li>
-      <li class="nav-item h3 bg-dark-subtle text-center cursor-pointer" (click)="toggleVisibility('showChangeData')">
-        <a class="nav-link">Zmień dane</a>
-      </li>
-      <li class="nav-item h3 bg-body-secondary text-center cursor-pointer" (click)="toggleVisibility('showYourOrders')">
-        <a class="nav-link">Twoje zamówienia</a>
-      </li>
-      <li class="nav-item h3 bg-dark-subtle text-center cursor-pointer" (click)="toggleVisibility('showOrderHistory')">
-        <a class="nav-link">Historia zamówień</a>
-      </li>
-      <li class="nav-item h3 bg-body-secondary text-center cursor-pointer" (click)="toggleVisibility('showComplaints')">
-        <a class="nav-link">Reklamacja</a>
-      </li>
-    </ul>
-  </div>
-</nav>
- 
- 
- 
- <div class="wrapper d-flex flex-row h-80 bg-light rounded responsive-wrapper flex-grow-1" style="width: 100%;">
-    	
-    <div class="content flex-grow-1 bg-white p-3 p-sm-4 m-0" style="background-color: rgb(196, 196, 196);">
-	<div *ngIf="showPersonal">
-      <div class="d-flex justify-content-between align-items-center mb-4 border-bottom">
-        <h1 class="mb-0">Dane</h1>
-      </div>
-  
-      <div class="scrollable-content" style="overflow-y: scroll; overflow-x: hidden">
-        <div class="profile-box p-2 mb-4">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="input-imie">Imie</label>
-                <input type="text" class="form-control" id="input-imie" placeholder="{{ currentUser.firstName }}" disabled>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="input-nazwisko">Nazwisko</label>
-                <input type="text" class="form-control" id="input-nazwisko" placeholder="{{ currentUser.surname }}" disabled>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="input-miasto">Miasto</label>
-                <input type="text" class="form-control" id="input-miasto" placeholder="{{currentUser.city}}" disabled>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="input-ulica">Ulica</label>
-                <input type="text" class="form-control" id="input-ulica" placeholder="{{currentUser.address}}" disabled>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="input-numer-mieszkania">Numer mieszkania</label>
-                <input type="text" class="form-control" id="input-numer-mieszkania" placeholder="{{currentUser.apartmentNumber}}" disabled>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="input-kod-pocztowy">Kod pocztowy</label>
-                <input type="text" class="form-control" id="input-kod-pocztowy" placeholder="{{currentUser.zipCode}}" disabled>
-              </div>
-            </div>
-          </div>
-          <div *ngIf="currentUser.company">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="input-numer-mieszkania">NIP</label>
-                  <input type="text" class="form-control" id="input-numer-mieszkania" placeholder="{{currentUser.nip}}" disabled>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="d-flex justify-content-between align-items-center mb-4 border-bottom">
-          <h1 class="mb-0">Dane kontaktowe</h1>
-        </div>
-        <div class="profile-box p-2 mb-4">
-          <div class="row">
-          <div class="form-group">
-            <label for="input-kod-pocztowy">Email</label>
-            <input type="text" class="form-control" id="input-kod-pocztowy" placeholder="{{currentUser.email}}" disabled>
-            </div>
-            <div class="form-group">
-              <label for="input-kod-pocztowy">Telefon</label>
-              <input type="text" class="form-control" id="input-kod-pocztowy" placeholder="{{currentUser.phoneNumber}}" disabled>
-              </div>
-              </div>
-        </div>
-  
-    </div>
-  </div>
-  
-  <div *ngIf="showChangePassword">
-    <div class="d-flex justify-content-between align-items-center mb-4 border-bottom">
-      <h1 class="mb-0">Zmień hasło</h1>
-    </div>
-    <div class="form-group d-flex flex-column">
-      <label for="input-old-password">Stare hasło</label>
-      <input type="password" class="form-control flex-grow-1 mx-2" id="input-old-password" placeholder="" #oldPassword>
-    </div>
-    <div class="form-group d-flex flex-column">
-      <label for="input-new-password">Nowe hasło</label>
-      <input type="password" class="form-control flex-grow-1 mx-2" id="input-new-password" placeholder="" #newPassword>
-    </div>
-    <div class="text-center mt-3">
-      <button class="btn btn-primary px-4 py-1 mb-3" (click)="submitForm(oldPassword.value, newPassword.value)">Potwierdź</button>
-    </div>
-  </div>
-
-	<div *ngIf="showChangeData">
-    <div class="d-flex justify-content-between align-items-center mb-4 border-bottom">
-      <h1 class="mb-0">Zmień dane</h1>
-    </div>
-
-    <div class="scrollable-content" style="overflow-y: scroll; overflow-x: hidden">
-      <div class="profile-box p-2 mb-4">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="input-imie">Imie</label>
-              <input type="text" class="form-control" id="input-imie" placeholder="{{ currentUser.firstName }}" #firstname>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="input-nazwisko">Nazwisko</label>
-              <input type="text" class="form-control" id="input-nazwisko" placeholder="{{ currentUser.surname }}" #surname>
-            </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="text-center">
+            <img src="assets/img/icon/avatar.png" class="img-fluid rounded-circle" alt="User Photo">
+            <h4 class="mt-2">{{ currentUser.firstName }} {{ currentUser.surname }}</h4>
+            <p class="text-muted">{{currentUser.email}}</p>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="input-miasto">Miasto</label>
-              <input type="text" class="form-control" id="input-miasto" placeholder="{{ currentUser.city }}" #city>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="input-ulica">Ulica</label>
-              <input type="text" class="form-control" id="input-ulica" placeholder="{{ currentUser.address }}" #address>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="input-numer-mieszkania">Numer mieszkania</label>
-              <input type="text" class="form-control" id="input-numer-mieszkania" placeholder="{{ currentUser.apartmentNumber }}" #apartmentnumber>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="input-kod-pocztowy">Kod pocztowy</label>
-              <input type="text" class="form-control" id="input-kod-pocztowy" placeholder="{{ currentUser.zipCode }}" #zipcode>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="d-flex justify-content-between align-items-center mb-4 border-bottom">
-        <h1 class="mb-0">Zmień dane kontaktowe</h1>
-      </div>
-      <div class="profile-box p-2 mb-4">
-        <div class="row">
-        <div class="form-group">
-          <label for="input-kod-pocztowy">Email</label>
-          <input type="text" class="form-control" id="input-kod-pocztowy" placeholder="{{ currentUser.email }}" #email>
-          </div>
-          <div class="form-group">
-            <label for="input-kod-pocztowy">Telefon</label>
-            <input type="text" class="form-control" id="input-kod-pocztowy" placeholder="{{ currentUser.phoneNumber }}" #phone>
-            </div>
-            </div>
-      </div>
-
-  </div>
-  <div class="text-center mt-3">
-    <button class="btn btn-primary px-4 py-1" (click)="submitChangeData(firstname.value, surname.value, city.value, address.value, apartmentnumber.value, zipcode.value, email.value, phone.value)">Potwierdź</button>
-  </div>
-
-
-
-
-
-
-  </div>
-
-	<div *ngIf="showYourOrders">
-    <div class="d-flex justify-content-between align-items-center mb-4 border-bottom">
-      <h1 class="mb-0 text-center">Twoje zamówienia</h1>
-    </div>
-	
-	<div class="table-responsive">
-	<table class="table table-e table-bordered">
-    <thead>
-      <tr>
-      <th>ID</th>
-      <th>Status</th>
-	  <th>Cena</th>
-	  <th>Data</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr (click)="LoadOrder(order.id)" style="cursor: pointer;" *ngFor="let order of currentUser.activeOrders">
-        <td>{{ order.id }}</td>
-		<td style="word-break: break-all;">{{ order.status}}</td>
-        <td>{{ getTotal(order) }} zł</td>
-        <td>{{ order.date }}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-
-
-  </div>
-
-  <div *ngIf="showOrderHistory">
-    <div class="d-flex justify-content-between align-items-center mb-4 border-bottom text-center">
-      <h1 class="mb-0">Historia zamówień</h1>
-    </div>
-
-
-
-
-<div class="table-responsive">
-  <table class="table table-e table-bordered">
-    <thead>
-      <tr>
-      <th>ID</th>
-      <th>Produkty</th>
-      <th>Cena</th>
-	  <th>Data</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let order of currentUser.archiveOrders">
-        <td>{{ order.id }}</td>
-        <td>
-          <ul class="list-unstyled">
-            <li *ngFor="let item of order.items">{{ item.category }} - {{ item.price}} zł</li>
+        <div class="col-md-9">
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link" [class.active]="activeLink === 'showPersonal'" (click)="toggleVisibility('showPersonal')">Dane</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [class.active]="activeLink === 'showChangePassword'" (click)="toggleVisibility('showChangePassword')">Zmień hasło</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [class.active]="activeLink === 'showYourOrders'" (click)="toggleVisibility('showYourOrders')">Aktualne zamówienia</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [class.active]="activeLink === 'showOrderHistory'" (click)="toggleVisibility('showOrderHistory')">Historia zamówień</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [class.active]="activeLink === 'showComplaints'" (click)="toggleVisibility('showComplaints')">Reklamacje</a>
+            </li>
           </ul>
-        </td>
-        <td>{{ getTotal(order) }} zł</td>
-        <td>{{ order.date }}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+          <div class="tab-content">
 
-  </div>
 
-  <div *ngIf="showComplaints">
-    <div class="d-flex justify-content-between align-items-center mb-4 border-bottom">
-      <h1 class="mb-0">Reklamacja</h1>
-    </div>
-          <form class="px-4 py-3">
-            <div class="form-group">
-              <label for="complaintSubject">Temat</label>
-              <input type="text" class="form-control" id="complaintSubject" placeholder="">
-            </div>
-            <div class="dropdown mt-3 mb-1">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="orderDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Wybierz zamówienie
-              </button>
-              <div class="dropdown-menu" aria-labelledby="orderDropdown">
-                <a *ngFor="let order of currentUser.archiveOrders" class="dropdown-item" (click)="selectOrder(order)">
-                  ID: {{ order.id }} - {{ order.date }}
-                </a>
+            <div *ngIf="showPersonal" class="personl" [@fadeIn]>
+              <form  #changePersonalData="ngForm"  (ngSubmit)="validPersonalData(changePersonalData.value)">
+                <div class="d-flex justify-content-between align-items-center mb-4 border-bottom">
+                  <h1 class="mb-0 mt-2">Dane</h1>
+                </div>
+                <div class="card mb-4 shadow-sm">
+                  <div class="card-body ">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="input-imie">Imie</label>
+                          <input type="text" class="form-control" id="input-imie" name="firstName" [(ngModel)]=" currentUser.firstName " ngModel>
+                        </div>
+                        <div  class="text-danger">
+                          {{fistNameAlert}}
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="input-nazwisko">Nazwisko</label>
+                          <input type="text" class="form-control" id="input-nazwisko" name="surname" [(ngModel)]="currentUser.surname" ngModel>
+                        </div>
+                        <div  class="text-danger">
+                          {{surnameAlert}}
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="input-miasto">Miasto</label>
+                          <input type="text" class="form-control" id="input-miasto" name="city" [(ngModel)]="currentUser.city" ngModel>
+                        </div>
+                        <div  class="text-danger">
+                          {{cityAlert}}
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="input-ulica">Ulica</label>
+                          <input type="text" class="form-control" id="input-ulica" name="street" [(ngModel)]="currentUser.street" ngModel>
+                        </div>
+                        <div  class="text-danger">
+                          {{streetAlert}}
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="input-numer-mieszkania">Numer domu</label>
+                          <input type="text" class="form-control" id="input-numer-domu" name="houseNumber" [(ngModel)]="currentUser.houseNumber" ngModel>
+                        </div>
+                        <div  class="text-danger">
+                          {{houseNumberAlert}}
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="input-numer-mieszkania">Numer mieszkania</label>
+                          <input type="text" class="form-control" id="input-numer-mieszkania" name="apartmentNumber" [(ngModel)]="currentUser.apartmentNumber" ngModel>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="input-kod-pocztowy">Kod pocztowy</label>
+                          <input type="text" class="form-control" id="input-kod-pocztowy" name="zipCode" [(ngModel)]="currentUser.zipCode" ngModel>
+                        </div>
+                        <div  class="text-danger">
+                          {{zipCodeAlert}}
+                        </div>
+                      </div>
+                      <div *ngIf="currentUser.company">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label for="input-numer-mieszkania">NIP</label>
+                              <input type="text" class="form-control" id="input-nip" name="nip" [(ngModel)]="currentUser.nip" ngModel>
+                            </div>
+                            <div  class="text-danger">
+                              {{nipAlert}}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                   <!-- </form> -->
+                    </div>
+
+                  </div>
+                </div>
+                <div class="scrollable-content">
+
+                  <div class="d-flex justify-content-between align-items-center mb-4 border-bottom">
+                    <h1 class="mb-0">Dane kontaktowe</h1>
+                  </div>
+                  <div class="card mb-4 shadow-sm ">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="input-email">Email</label>
+                            <input type="email" class="form-control" id="input-email" value="{{currentUser.email}}" readonly disabled>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="input-phone">Telefon</label>
+                            <input type="tel" class="form-control" id="input-phone" name="phoneNumber" placeholder="{{currentUser.phoneNumber}}" ngModel>
+                          </div>
+                          <div  class="text-danger">
+                            {{phoneNumberAlert}}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button type="submit"class="btn btn-primary px-4 py-1 mb-3">Zmień</button>
+                </div>
+             </form>
+          </div>
+
+
+            <div *ngIf="showChangePassword" [@fadeIn]>
+              <div class="d-flex justify-content-between align-items-center mb-4 border-bottom">
+                <h1 class="mb-0 mt-2">Zmień hasło</h1>
               </div>
+              <form  #changePassword="ngForm"  (ngSubmit)="validData(changePassword.value)">
+              <div class="form-group">
+                <label for="old-password">Stare hasło:</label>
+                <input type="password" class="form-control flex-grow-1 mx-2" id="oldpass" name="oldpass" ngModel [ngClass]="{'border-danger':passwordOldAlert.length!=0}">
+              </div>
+              <div  class="text-danger">
+                {{passwordOldAlert}}
+              </div>
+              <div class="form-group">
+                <label for="new-password">Nowe hasło:</label>
+                <input type="password" class="form-control flex-grow-1 mx-2" id="newpass" name="newpass" #newPassword ngModel [ngClass]="{'border-danger':passworNewAlert.length!=0}">
+              </div>
+              <div  class="text-danger">
+                {{passworNewAlert}}
+              </div>
+
+
+
+
+              <div class="text-center mt-3">
+                <button type="submit"class="btn btn-primary px-4 py-1 mb-3">Potwierdź</button>
+              </div>
+            </form>
             </div>
-            <div class="form-group">
-              <label for="complaintDescription">Opis</label>
-              <textarea class="form-control" id="complaintDescription" rows="3" placeholder=""></textarea>
+
+          </div>
+
+
+          <div *ngIf="showYourOrders" [@fadeIn]>
+            <div class="d-flex justify-content-between align-items-center mb-4 border-bottom">
+              <h1 class="mb-0 text-center mt-2">Twoje zamówienia</h1>
             </div>
-            <button type="submit" class="btn btn-primary mt-1">Potwierdź</button>
-          </form>
-  </div>
 
-	  <div *ngIf="showExpandedOrder">
-      <div class="d-flex align-items-center mb-4 border-bottom">
-        <a (click)="toggleVisibility('showYourOrders')"><img src="assets/img/icon/left-arrow.png" style="cursor: pointer;" class="icon" alt="leftarrow"></a>
-        
-        <h1 class="mb-0">Zamówienie numer {{ExpandedOrder.id}}</h1>
+            <div class="table-responsive">
+              <table class="table table-striped table-hover">
+                <thead class="thead-dark">
+                  <tr>
+                    <th>ID</th>
+                    <th>Status</th>
+                    <th>Cena</th>
+                    <th>Data</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr (click)="LoadOrder(order.id)" style="cursor: pointer;" *ngFor="let order of currentUser.activeOrders">
+                    <td>{{ order.id }}</td>
+                    <td style="word-break: break-all;">{{ order.status}}</td>
+                    <td>{{ getTotal(order) }} zł</td>
+                    <td>{{ order.date }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            </div>
+
+
+            <div *ngIf="showOrderHistory" [@fadeIn]>
+              <div class="d-flex justify-content-between align-items-center mb-4 border-bottom text-center">
+                <h1 class="mb-0 mt-2">Historia zamówień</h1>
+              </div>
+          <div class="table-responsive">
+            <table class="table table-e">
+              <thead>
+                <tr>
+                <th>ID</th>
+                <th>Produkty</th>
+                <th>Cena</th>
+                <th>Data</th>
+                <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let order of UserOrders">
+                  <td>{{ order.id }}</td>
+                  <td>
+                    <ul class="list-unstyled">
+                      <li *ngFor="let item of order.items">{{ item.category }} - {{ item.price}} zł - sztuki: {{ item.amount }} </li>
+                    </ul>
+                  </td>
+                  <td>{{ getTotal(order) }} zł</td>
+                  <td>{{ order.date }}</td>
+                  <td>{{ order.status }} </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+            </div>
+
+
+
+
+
+            <div *ngIf="showComplaints" [@fadeIn]>
+              <div class="d-flex justify-content-between align-items-center mb-4 border-bottom">
+                <h1 class="mb-0 mt-2">Reklamacja</h1>
+              </div>
+                    <form class="px-4 py-3">
+                      <div class="form-group">
+                        <label for="complaintSubject">Temat</label>
+                        <input type="text" class="form-control" id="complaintSubject" placeholder="">
+                      </div>
+                      <div class="dropdown mt-3 mb-1">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="orderDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Wybierz zamówienie
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="orderDropdown">
+                          <a *ngFor="let order of currentUser.archiveOrders" class="dropdown-item" (click)="selectOrder(order)">
+                            ID: {{ order.id }} - {{ order.date }}
+                          </a>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="complaintDescription">Opis</label>
+                        <textarea class="form-control" id="complaintDescription" rows="3" placeholder=""></textarea>
+                      </div>
+                      <button type="submit" class="btn btn-primary mt-1">Potwierdź</button>
+                    </form>
+            </div>
+
+              <div *ngIf="showExpandedOrder" [@fadeIn]>
+                <div class="d-flex align-items-center mb-4 border-bottom">
+                  <a (click)="toggleVisibility('showYourOrders')"><img src="assets/img/icon/left-arrow.png" style="cursor: pointer;" class="icon" alt="leftarrow"></a>
+
+                  <h1 class="mb-0">Zamówienie numer {{ExpandedOrder.id}}</h1>
+                </div>
+
+                <div class="table-responsive">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                      <th>Produkt</th>
+                      <th>Cena</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <ul>
+                            <li *ngFor="let item of ExpandedOrder.items">{{ item.category }}</li>
+                          </ul>
+                        </td>
+                        <td>
+                          <ul>
+                            <li *ngFor="let item of ExpandedOrder.items">{{ item.price }} zł</li>
+                          </ul>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
+        </div>
       </div>
-
-      <div class="table-responsive">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-            <th>Produkt</th>
-            <th>Cena</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <ul>
-                  <li *ngFor="let item of ExpandedOrder.items">{{ item.category }}</li>
-                </ul>
-              </td>
-              <td>
-                <ul>
-                  <li *ngFor="let item of ExpandedOrder.items">{{ item.price }} zł</li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      
-
-
     </div>
-
-
-</div>
-
-
-
+    <div class="card-footer">
+      <div class="row">
+        <div class="col-md-3">
+          <ul class="list-group">
+            <li class="list-group-item mt-2 mb-2">Konto założone: {{ currentUser.creationDate | date:'dd/MM/yyyy' }}</li>
+          </ul>
+        </div>
+        <div class="col-md-9 text-right">
+          <button class="btn btn-danger mt-2 mb-2" (click)="logout()">Wyloguj</button>
+        </div>
+      </div>
+    </div>
+  </div>
   </div>

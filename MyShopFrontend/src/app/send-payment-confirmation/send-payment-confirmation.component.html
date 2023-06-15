@@ -1,0 +1,133 @@
+<div class="container mt-5 mb-5">
+  <div class="row justify-content-center">
+
+    <div class="col-md-6">
+      <div class="card h-100">
+        <div class="card-header bg-primary text-white">
+          <h4 class="text-center">Ustawienia konta Administratora</h4>
+        </div>
+        <div class="card-body">
+          <div class="list-group list-group-light">
+            <a href="#" class="list-group-item list-group-item-action px-3 border-0 active" aria-current="true">
+              Zarządzanie </a>
+            <a href="admin-panel/add-item" class="list-group-item list-group-item-action px-3 border-0">Dodaj produkt</a>
+            <a href="#" class="list-group-item list-group-item-action px-3 border-0">A third link item</a>
+            <a href="#" class="list-group-item list-group-item-action px-3 border-0">A fourth link item</a>
+            <a class="list-group-item list-group-item-action px-3 border-0 disabled">A disabled link item</a>
+          </div>
+          <div class="list-group list-group-light">
+            <a href="#" class="list-group-item list-group-item-action px-3 border-0 active" aria-current="true">
+              Opcje płatności</a>
+            <a href="#" class="list-group-item list-group-item-action px-3 border-0">A second link item</a>
+            <a href="#" class="list-group-item list-group-item-action px-3 border-0">A third link item</a>
+            <a href="#" class="list-group-item list-group-item-action px-3 border-0">A fourth link item</a>
+            <a class="list-group-item list-group-item-action px-3 border-0 disabled">A disabled link item</a>
+          </div>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card h-100">
+        <div class="card-header bg-primary text-white">
+          <h4 class="text-center">Umowy z dostawcami</h4>
+        </div>
+        <div class="card-body">
+
+          <div class="row m-2">
+
+            <div class="col lh-lg blockquote ">
+              InPost
+            </div>
+            <div class="col">
+              <button class="btn btn-secondary me-md-2 btn-lg w-100 " type="button">
+                <a class=" text-decoration-none link-light">Sprawdź</a>
+              </button>
+            </div>
+          </div>
+
+          <div class="row m-2">
+            <div class="col lh-lg blockquote">
+              DPD
+            </div>
+            <div class="col">
+              <button class="btn btn-secondary me-md-2 btn-lg w-100" type="button">
+                <a class=" text-decoration-none link-light" >Sprawdź</a>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <div class="col-xl-12 m-3">
+        <div class="card">
+          <div class="card-header bg-primary text-white">
+            <h4 class="text-center">Płatności użytkowników</h4>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-hover mb-0">
+                <thead>
+                  <tr class="align-self-center">
+                    <th>Id zamówienia</th>
+                    <th>Imie i nazwisko klienta</th>
+                    <th>Typ płatności</th>
+                    <th>Data płatności</th>
+                    <th>Kwota</th>
+                    <th>Stan transakcji</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <ng-container *ngFor="let order of showAll ? orders : orders.slice(0, 5); let i = index">
+                    <tr (click)="expandRow(i)">
+                      <td>{{ order.id }}</td>
+                      <td>
+                        <img [src]="order.avatar" alt="" class="thumb-sm rounded-circle mr-2">
+                       {{ order.user!.firstName }} {{ order.user!.surname }}
+                      <!--  {{ order.name }} -->
+                      </td>
+                      <!-- <td>{{ order.paymentType }}</td> -->
+                      <td> Blik </td>
+                      <td>{{ order.date }}</td>
+                      <td>{{ getTotal(order) }}</td>
+                      <td><span [ngClass]="getStatusClass(order.status)">{{ order.status }}</span></td>
+                    </tr>
+                    <tr class="expandendrow" *ngIf="expandedRows[i]">
+                      <td colspan="6">
+                        <!-- Additional details/options for the expanded row -->
+                        <div class="expanded-details">
+                          <div class="d-flex justify-content-between">
+                            <h5>Kupione przedmioty:</h5>
+                            <button *ngIf="order.status === 'Realizowane'" class="btn btn-primary" (click)="changeStatus(order.id)">Change Status</button>
+                          </div>
+                          <ul class="list-group mt-3">
+                            <li class="list-group-item list-group-item-primary  d-inline-block text-truncate" style="max-width: 350px; overflow: hidden; text-overflow: ellipsis;" *ngFor="let item of order.items">{{ item.shortDescription }} - cena: {{ item.price }} zł - szt. {{ item.amount}}</li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                  </ng-container>
+                </tbody>
+              </table>
+            </div>
+            <!--end table-responsive-->
+            <div class="pt-3 border-top text-right">
+              <button *ngIf="!showAll" class="btn btn-primary text-white" (click)="viewAll()">Pokaz wszystkie<i class="mdi mdi-arrow-right"></i></button>
+              <button *ngIf="showAll" class="btn btn-primary text-white" (click)="viewAll()">Zwin<i class="mdi mdi-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
+      <button class="btn btn-secondary me-md-2 btn-lg m-3" type="button"><a class="text-decoration-none link-light" routerLink="">Zapisz zmiany</a></button>
+    </div>
+
+  </div>
+</div>

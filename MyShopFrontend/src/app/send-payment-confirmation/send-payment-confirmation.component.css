@@ -1,0 +1,20 @@
+.thumb-sm {
+  height: 32px;
+  width: 32px;
+}
+.badge-soft-warning {
+  background-color: rgba(248,201,85,.2);
+  color: #f8c955;
+}
+
+.badge {
+  font-weight: 500;
+}
+.badge-soft-primary {
+  background-color: rgba(96,93,175,.2);
+  color: #605daf;
+}
+
+.expandendrow {
+  background-color: #f8f9fa;
+}
