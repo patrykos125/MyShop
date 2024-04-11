@@ -13,7 +13,7 @@ public class ItemService {
     private ItemRepository itemRepository;
 @Bean
     public void prepareRepository(){
-////    itemy w bazie danych
+//    itemy w bazie danych
 //        itemRepository.save(new Item(0,"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, magni.","długi opis", "42", Category.SHOES,12.99,"https://i.erli.pl/10pmzc.320e1e.xl.jpg",20,true));
 //        itemRepository.save(new Item(0,"jakis opisLorem ipsum dolor sit amet,","długi opis", "M", Category.T_SHIRT,15.99,"https://sklep.keeza.pl/userdata/public/gfx/803/Koszulka-bawelniana-KEEZA.jpg",20,false));
 //        itemRepository.save(new Item(0,"jakis opisdolor sit amet, ","długi opis", "M", Category.JACKET,12.99,"https://www.alpinus.eu/img/2508111/kurtka-zimowa-meska-alpinus-nordend.jpg",20,false));
