@@ -38,7 +38,7 @@ export class RegistrationPageComponent implements OnInit{
     this.lockCompanyField();
 
   }
-  public onSubmit(data:any){
+  public onSubmit(data:UserRegistrationDto){
     this.http.post('http://localhost:8080/registration',data).pipe(
       catchError((error: HttpErrorResponse) => {
         if (error.status === HttpStatusCode.Conflict) {

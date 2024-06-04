@@ -25,7 +25,6 @@ public SessionRegistry sessionRegistry;
     @PostMapping("login")
     public ResponseEntity<SessionDto> login(@RequestBody UserLoginDto userLoginDto){
         Authentication authenticate = manager.authenticate(new UsernamePasswordAuthenticationToken(userLoginDto.getEmail(), userLoginDto.getPassword()));
-        System.out.println(userLoginDto);//TODO wywalić tą linijkę
         if (authenticate.isAuthenticated()) {
             String sessionKey = sessionRegistry.registerSession(userLoginDto.getEmail());
             SessionDto response = new SessionDto();

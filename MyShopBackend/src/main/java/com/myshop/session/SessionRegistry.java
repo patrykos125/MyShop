@@ -29,17 +29,13 @@ public class SessionRegistry {
             throw  new RuntimeException("Email needs to by provided");
         }
         final  String sessionKey = generateSessionKey();
-
         Session session = new Session(sessionKey);
         sessionRepository.save(session);
-
         User user = userRepository.findUserByEmail(email);
         user.setSession(session);
         user.setLastLogin(LocalDate.now());
         userRepository.save(user);
-
         return sessionKey;
-
 
     }
     public String getEmailForSession(final String sessionKey){

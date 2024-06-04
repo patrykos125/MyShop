@@ -20,6 +20,7 @@ public class Item implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
    private long itemId;
    private String  shortDescription;
+   @Column(length = 25000)
    private String longDescription;
    private String size;
    @Enumerated(EnumType.STRING)
@@ -32,7 +33,9 @@ public class Item implements Serializable {
    @OneToMany(mappedBy = "item")
    private List<CommentItem> comments = new ArrayList<>();
 
-   public Item(long itemId, String shortDescription, String longDescription, String size, Category category, double price, String imgUrl, double oldPrice, boolean sale) {
+   public Item(long itemId, String shortDescription,
+               String longDescription, String size, Category category,
+               double price, String imgUrl, double oldPrice, boolean sale) {
       this.itemId = itemId;
       this.shortDescription = shortDescription;
       this.longDescription = longDescription;

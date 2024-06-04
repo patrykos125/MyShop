@@ -27,13 +27,12 @@ public class AuthController {
     @GetMapping("/api/authAdmin")
     public ResponseEntity<Boolean> checkUserRole(@RequestHeader("Authorization") String token) {
         if(sessionRepository.findSessionBySessionKey(token).isPresent()){
-            if(sessionRepository.findSessionBySessionKey(token).get().getUser().getUserRole() == UserRole.Admin || sessionRepository.findSessionBySessionKey(token).get().getUser().getUserRole() == UserRole.Moderator) {
+            if(sessionRepository.findSessionBySessionKey(token).get().getUser().getUserRole() == UserRole.Admin
+                    || sessionRepository.findSessionBySessionKey(token).get().getUser().getUserRole() == UserRole.Moderator) {
                 return ResponseEntity.ok(true);
             }
-            return ResponseEntity.ok(false);
-        } else {
-            return ResponseEntity.ok(false);
         }
+        return ResponseEntity.ok(false);
     }
 
 
